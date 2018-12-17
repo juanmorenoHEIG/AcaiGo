@@ -3,6 +3,13 @@ import { NavController } from 'ionic-angular';
 import { CreateIssuePage } from '../create-issue/create-issue';
 import { IssueMapPage } from '../issue-map/issue-map';
 import { IssueListPage } from '../issue-list/issue-list';
+//new
+import { ProfilPage } from '../profil/profil';
+import { ProduitsListePage } from '../produits-liste/produits-liste';
+import { AProposPage } from '../a-propos/a-propos';
+
+
+
 
 // TODO: add an interface to represent a tab.
 export interface HomePageTab {
@@ -22,9 +29,9 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
     // TODO: define some tabs.
     this.tabs = [
-      { title: 'New Issue', icon: 'add', component: CreateIssuePage },
-      { title: 'Issue Map', icon: 'map', component: IssueMapPage },
-      { title: 'Issue List', icon: 'list', component: IssueListPage }
+      { title: 'Liste produits', icon: 'list', component: ProduitsListePage },
+      { title: 'Profil', icon: 'Profil', component: ProfilPage },
+      { title: 'A propos', icon: 'apropos', component: AProposPage }
     ];
   }
 }

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AuthProvider } from '../../providers/auth/auth';
+import { LoginPage } from '../login/login';
+
 
 /**
  * Generated class for the ProduitsListePage page.
@@ -14,11 +17,14 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ProduitsListePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private auth: AuthProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProduitsListePage');
   }
 
+  logOut() {
+    this.auth.logOut();
+  }
 }

@@ -50,7 +50,14 @@
 
       <!-- Error message displayed if the login failed -->
       <p *ngIf='loginError' ion-text color='danger'>Username or password is invalid.</p>
-
+      
+      <ion-buttons end>
+        <button ion-button block (click)='register()'>
+          <ion-icon name='register'>S'enregistrer</ion-icon>
+        </button>
+      </ion-buttons>
     </div>
+    
   </form>
+  
 </ion-content>
