@@ -1,5 +1,7 @@
 {
   "name": "acai",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

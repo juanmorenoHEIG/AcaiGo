@@ -14,5 +14,73 @@
 
 
 <ion-content padding>
+  <form (submit)='onSubmit($event)'>
+    <ion-list>
 
+      <!-- Surname input -->
+      <ion-item>
+        <ion-label floating>Prénom</ion-label>
+        <ion-input type='text' name='surname'
+                   #surnameInput='ngModel' required></ion-input>
+      </ion-item>
+
+      <!-- Error message displayed if the surname is invalid -->
+      <ion-item *ngIf='surnameInput.invalid && surnameInput.dirty' no-lines>
+        <p ion-text color='danger'>Surname is required.</p>
+      </ion-item>
+
+      <!-- Name input -->
+      <ion-item>
+        <ion-label floating>Nom</ion-label>
+        <ion-input type='text' name='name'
+                   #nameInput='ngModel' required></ion-input>
+      </ion-item>
+
+      <!-- Error message displayed if the name is invalid -->
+      <ion-item *ngIf='nameInput.invalid && nameInput.dirty' no-lines>
+        <p ion-text color='danger'>Name is required.</p>
+      </ion-item>
+
+      <!-- address input -->
+      <ion-item>
+        <ion-label floating>Adresse</ion-label>
+        <ion-input type='text' name='address'
+                   #nameInput='ngModel' required></ion-input>
+      </ion-item>
+
+      <!-- Error message displayed if the address is invalid -->
+      <ion-item *ngIf='addressInput.invalid && addressInput.dirty' no-lines>
+        <p ion-text color='danger'>Address is required.</p>
+      </ion-item>
+
+      <!-- address input -->
+      <ion-item>
+        <ion-label floating>NPA</ion-label>
+        <ion-input type='number' name='npa'
+                   #npaInput='ngModel' required></ion-input>
+      </ion-item>
+
+      <!-- Error message displayed if the password is invalid -->
+      <ion-item *ngIf='npaInput.invalid && npaInput.dirty' no-lines>
+        <p ion-text color='danger'>NPA is required.</p>
+      </ion-item>
+
+    </ion-list>
+
+    <div padding>
+
+      <!-- Submit button -->
+      <button type='submit' [disabled]='form.invalid' ion-button block>Log in</button>
+
+      <!-- Error message displayed if the login failed -->
+      <p *ngIf='loginError' ion-text color='danger'>Username or password is invalid.</p>
+      
+      <ion-buttons end>
+        <button ion-button block (click)='register()'>
+          <ion-icon name='register'>S'enregistrer</ion-icon>
+        </button>
+      </ion-buttons>
+    </div>
+    
+  </form>
 </ion-content>
