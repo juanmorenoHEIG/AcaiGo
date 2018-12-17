@@ -30,8 +30,8 @@ export class HomePage {
     // TODO: define some tabs.
     this.tabs = [
       { title: 'Liste produits', icon: 'list', component: ProduitsListePage },
-      { title: 'Profil', icon: 'Profil', component: ProfilPage },
-      { title: 'A propos', icon: 'apropos', component: AProposPage }
+      { title: 'Profil', icon: 'contact', component: ProfilPage },
+      { title: 'À propos', icon: 'information-circle', component: AProposPage }
     ];
   }
 }
