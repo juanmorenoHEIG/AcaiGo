@@ -19,5 +19,45 @@
 
 
 <ion-content padding>
-
+  <ion-grid>
+    <ion-row class="avatar" justify-content-start>
+        <ion-col col-3>
+          <img id="profile-image" src="https://image.flaticon.com/icons/svg/3/3711.svg">
+        </ion-col>
+        <ion-col col-3>
+          <h3 id="profile-name">John Doe</h3>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label>E-mail:</ion-label>
+        <ion-input>E-mail</ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label fixed>Mot de passe:</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label fixed>Moyen de paiement:</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </ion-row>
+  </ion-grid>
+  <ion-list>
+    <button class="commande" ion-item>
+      commande1
+    </button>
+    <button class="commande" ion-item>
+      commande2
+    </button>
+  </ion-list>
+  <ion-footer>
+    <ion-col>
+      <button ion-button class="submit-btn" full type="submit">Voir toutes les commandes</button>
+    </ion-col>
+  </ion-footer>
 </ion-content>
