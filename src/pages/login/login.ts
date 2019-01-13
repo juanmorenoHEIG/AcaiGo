@@ -5,6 +5,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { AuthRequest } from '../../models/auth-request';
 import { AuthProvider } from '../../providers/auth/auth';
 import { HomePage } from '../home/home';
+import { RegisterPage} from "../register/register";
 
 /**
  * Login page.
@@ -62,7 +63,9 @@ export class LoginPage {
     });
   }
 //
-  register(){
-    
+  public register(){
+
+      this.navCtrl.push(RegisterPage);
+
   }
 }

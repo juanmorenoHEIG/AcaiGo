@@ -29,7 +29,7 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
     // TODO: define some tabs.
     this.tabs = [
-      { title: 'Liste produits', icon: 'list', component: ProduitsListePage },
+      { title: 'Liste des produits', icon: 'list', component: ProduitsListePage },
       { title: 'Profil', icon: 'contact', component: ProfilPage },
       { title: 'À propos', icon: 'information-circle', component: AProposPage }
     ];

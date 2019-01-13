@@ -6,7 +6,7 @@ page-produits-liste {
   }
 
   button.ajouter:hover {
-    background-color: indigo;
+    background-color: white;
     color: white;
   }
 
@@ -14,5 +14,10 @@ page-produits-liste {
     background-color: white;
     color: #662483;
     border: 1px solid #662483;
+  }
+
+  button.customiser:hover {
+    background-color: #662483 ;
+    color: white;
   }
 }
