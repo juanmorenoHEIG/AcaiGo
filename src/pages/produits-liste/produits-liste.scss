@@ -1,30 +1,39 @@
 page-produits-liste {
 
-  button.ajouter {
+  .ajouter {
     background-color: #662483;
     color: white;
   }
 
-  button.ajouter:hover {
-    background-color: white;
+  .ajouter:hover {
+    background-color: indigo;
     color: white;
   }
 
-  button.customiser {
+  .customiser {
     background-color: white;
     color: #662483;
     border: 1px solid #662483;
   }
 
-  button.customiser:hover {
+  .customiser:hover {
     background-color: #662483 ;
     color: white;
   }
 
-  button.details {
+  a.details.button {
     background-color: white;
     color: #662483;
     border: none;
 
+  }
+
+  .bowl {
+    width: 30%;
+    height: 30%;
+    left: 0;
+    right: 0;
+    margin:0 auto;
+    padding-top: 20px;
   }
 }

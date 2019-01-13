@@ -17,29 +17,36 @@
 
 </ion-header>
 
-
 <ion-content padding>
   <ion-card>
-    <img src="img/nin-live.png"/>
+    <div text-center>
+      <img class="bowl" src="../../assets/imgs/acai_bowl.png"/>
+    </div>
     <ion-card-content>
       <ion-card-title>
         Acai bowl Chia
-        <button class="details" (click)='seeDetails()'>Détails</button>
       </ion-card-title>
+      <a class="details button" (click)='seeDetails()'>Ingrédients</a>
       <p>
         The most popular industrial group ever, and largely
         responsible for bringing the music to a mass audience.
       </p>
-      <ion-item style="padding: 0">
-        <button class="customiser" ion-button icon-left>
-          Customiser
-          <ion-icon></ion-icon>
-        </button>
-        <button class="ajouter" ion-button item-right="" >
-          <ion-icon></ion-icon>
-          Ajouter | CHF 3.95
-        </button>
-      </ion-item>
+        <ion-row>
+          <ion-col class="col-button" col-6>
+            <ion-buttons>
+              <button class="customiser" ion-button>
+                Customiser
+              </button>
+            </ion-buttons>
+          </ion-col>
+          <ion-col class="col-button" col-6>
+            <ion-buttons>
+              <button class="ajouter" ion-button>
+                Ajouter | CHF 3.95
+              </button>
+            </ion-buttons>
+          </ion-col>
+        </ion-row>
     </ion-card-content>
   </ion-card>
 </ion-content>

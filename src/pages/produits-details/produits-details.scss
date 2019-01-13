@@ -1,3 +1,42 @@
 page-produits-details {
 
+  .bowl {
+    width: 30%;
+    height: 30%;
+    left: 0;
+    right: 0;
+    margin:0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .ajouter, .customiser {
+    width: 100%;
+  }
+
+  .col-button {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .ajouter {
+    background-color: #662483;
+    color: white;
+  }
+
+  .ajouter:hover {
+    background-color: indigo;
+    color: white;
+  }
+
+  .customiser {
+    background-color: white;
+    color: #662483;
+    border: 1px solid #662483;
+  }
+
+  .customiser:hover {
+    background-color: #662483 ;
+    color: white;
+  }
 }
