@@ -6,14 +6,21 @@
 -->
 <ion-header>
 
+<!--
   <ion-navbar>
     <ion-title>Login</ion-title>
   </ion-navbar>
+-->
 
 </ion-header>
-
-
 <ion-content padding>
+  <ion-row class="logo-row" style="padding-top:200px">
+    <ion-col></ion-col>
+    <ion-col width-67>
+      <img src="../../assets/imgs/acai.png"/>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
   <form (submit)='onSubmit($event)'>
     <ion-list>
 
@@ -46,18 +53,19 @@
     <div padding>
 
       <!-- Submit button -->
-      <button type='submit' [disabled]='form.invalid' ion-button block>Log in</button>
+      <button type='submit' [disabled]='form.invalid' ion-button block icon-left>Log in</button>
 
       <!-- Error message displayed if the login failed -->
       <p *ngIf='loginError' ion-text color='danger'>Username or password is invalid.</p>
-      
+
       <ion-buttons end>
-        <button ion-button block (click)='register()'>
-          <ion-icon name='register'>S'enregistrer</ion-icon>
+        <button ion-button block (click)='register()' icon-right>
+          <ion-icon name='register'></ion-icon>
+          SIGN UP
         </button>
       </ion-buttons>
     </div>
-    
+
   </form>
   
 </ion-content>

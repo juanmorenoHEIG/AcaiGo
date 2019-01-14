@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { LoginPage } from '../login/login';
+import {ProduitsDetailsPage} from '../produits-details/produits-details';
+import {RegisterPage} from "../register/register";
 
 
 /**
@@ -26,5 +28,10 @@ export class ProduitsListePage {
 
   logOut() {
     this.auth.logOut();
+  }
+
+  seeDetails () {
+    console.log("détails");
+    this.navCtrl.push(ProduitsDetailsPage);
   }
 }

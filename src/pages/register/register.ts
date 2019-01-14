@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AuthProvider } from '../../providers/auth/auth';
 
 /**
  * Generated class for the RegisterPage page.
@@ -14,7 +15,11 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class RegisterPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    private auth: AuthProvider,
+  public navCtrl: NavController,
+    public navParams: NavParams,
+  ) {
   }
 
   ionViewDidLoad() {

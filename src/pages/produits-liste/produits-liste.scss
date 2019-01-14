@@ -1,3 +1,39 @@
 page-produits-liste {
 
+  .ajouter {
+    background-color: #662483;
+    color: white;
+  }
+
+  .ajouter:hover {
+    background-color: indigo;
+    color: white;
+  }
+
+  .customiser {
+    background-color: white;
+    color: #662483;
+    border: 1px solid #662483;
+  }
+
+  .customiser:hover {
+    background-color: #662483 ;
+    color: white;
+  }
+
+  a.details.button {
+    background-color: white;
+    color: #662483;
+    border: none;
+
+  }
+
+  .bowl {
+    width: 30%;
+    height: 30%;
+    left: 0;
+    right: 0;
+    margin:0 auto;
+    padding-top: 20px;
+  }
 }
