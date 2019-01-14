@@ -29,6 +29,7 @@ import { ProfilPage } from '../pages/profil/profil';
 import { RegisterPage } from '../pages/register/register';
 
 import { Camera } from '@ionic-native/camera';
+import { PictureProvider } from '../providers/picture/picture';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { Camera } from '@ionic-native/camera';
     AuthProvider,
     AuthInterceptorProvider,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
-    Camera
+    Camera,
+    PictureProvider
   ]
 })
 export class AppModule {}
