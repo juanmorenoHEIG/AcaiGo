@@ -29,20 +29,8 @@ import { ProfilPage } from '../pages/profil/profil';
 import { RegisterPage } from '../pages/register/register';
 
 import { Camera } from '@ionic-native/camera';
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { ProdListeServiceProvider } from '../providers/prod-liste-service/prod-liste-service';
 import { PictureProvider } from '../providers/picture/picture';
-=======
-import { PictureProvider } from '../providers/picture/picture'; 
-=======
-import { ProdListeServiceProvider } from '../providers/prod-liste-service/prod-liste-service';
-import { PictureProvider } from '../providers/picture/picture';
-import { UserServiceProvider } from '../providers/user/user-service';
-import { PictureProvider } from '../providers/picture/picture';
->>>>>>> 8252d60cab5ab7fc0d03bf097806569ba7284647
-import { ProdListeServiceProvider } from '../providers/prod-liste-service/prod-liste-service';
->>>>>>> f578a6fd668cb68b5b4a83e72aa5bb47d8d12444
 
 @NgModule({
   declarations: [
@@ -96,19 +84,8 @@ import { ProdListeServiceProvider } from '../providers/prod-liste-service/prod-l
     AuthInterceptorProvider,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
     Camera,
-<<<<<<< HEAD
-<<<<<<< HEAD
     ProdListeServiceProvider,
     PictureProvider
-=======
-=======
-    ProdListeServiceProvider,
-    PictureProvider,
-    UserServiceProvider,
->>>>>>> 8252d60cab5ab7fc0d03bf097806569ba7284647
-    PictureProvider,
-    ProdListeServiceProvider
->>>>>>> f578a6fd668cb68b5b4a83e72aa5bb47d8d12444
   ]
 })
 export class AppModule {}
