@@ -30,8 +30,6 @@ export class ProfilPage {
     public navParams: NavParams) 
     {
 
-
-      
     }
 
 
