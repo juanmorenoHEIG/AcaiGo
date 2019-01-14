@@ -26,7 +26,7 @@ export class HomePage {
 
   tabs: HomePageTab[];
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController){
     // TODO: define some tabs.
     this.tabs = [
       { title: 'Liste des produits', icon: 'list', component: ProduitsListePage },

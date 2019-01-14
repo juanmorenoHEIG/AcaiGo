@@ -3,6 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { LoginPage } from '../login/login';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { QimgImage } from '../../models/qimg-image';
+import { PictureProvider } from '../../providers/picture/picture';
 
 
 /**
@@ -18,26 +20,28 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 })
 export class ProfilPage {
   pictureData: string;
+  picture: QimgImage;
+
   constructor(
-    private camera: Camera, 
+    private camera: Camera,
+    private pictureService: PictureProvider, 
     private auth: AuthProvider, 
     public navCtrl: NavController, 
     public navParams: NavParams) 
-    {}
+    {
+
+
+      
+    }
+
 
     takePicture() {
-    const options: CameraOptions = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
-    };
-    this.camera.getPicture(options).then(pictureData => {
-      this.pictureData = pictureData;
-    }).catch(err => {
-      console.warn(`Could not take picture because: ${err.message}`);
-    });
-  }
+      this.pictureService.takeAndUploadPicture().subscribe(picture => {
+        this.picture = picture;
+      }, err => {
+        console.warn('Could not take picture', err);
+      });
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilPage');
@@ -46,4 +50,5 @@ export class ProfilPage {
   logOut() {
     this.auth.logOut();
   }
+
 }

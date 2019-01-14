@@ -4,7 +4,7 @@ import { AuthProvider } from '../../providers/auth/auth';
 import { LoginPage } from '../login/login';
 import {ProduitsDetailsPage} from '../produits-details/produits-details';
 import {RegisterPage} from "../register/register";
-
+import {ProdListeServiceProvider} from '../../providers/prod-liste-service/prod-liste-service';
 
 /**
  * Generated class for the ProduitsListePage page.
@@ -19,11 +19,12 @@ import {RegisterPage} from "../register/register";
 })
 export class ProduitsListePage {
 
-  constructor(private auth: AuthProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private auth: AuthProvider, public navCtrl: NavController, public navParams: NavParams, private prodListe: ProdListeServiceProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProduitsListePage');
+    this.prodListe.getProdListe().subscribe();
   }
 
   logOut() {

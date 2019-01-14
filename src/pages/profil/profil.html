@@ -23,8 +23,8 @@
     <ion-row class="avatar" justify-content-start>
         <ion-col col-4>
 
-            <ng-template [ngIf]="pictureData" [ngIfElse]="noPictureData">
-                <img src='data:image/jpeg;base64,{{ pictureData }}' />
+            <ng-template [ngIf]="picture" [ngIfElse]="noPictureData">
+                <img src='https://comem-qimg.herokuapp.com/api/images' />
             </ng-template>
             <ng-template #noPictureData>
                 <img id="profile-image" src="https://image.flaticon.com/icons/svg/3/3711.svg">
