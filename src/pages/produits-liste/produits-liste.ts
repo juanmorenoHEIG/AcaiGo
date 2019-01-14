@@ -27,11 +27,8 @@ export class ProduitsListePage {
   }
 
   ionViewDidLoad() {
-    
-
     console.log('ionViewDidLoad ProduitsListePage');
     this.prodListe.getProdListe().subscribe(prodListe => {
-
       this.products = prodListe.data;
     }, err => {
       console.warn('Could not get new prodliste', err);
