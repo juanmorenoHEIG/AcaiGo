@@ -14,7 +14,7 @@
 
 
 <ion-content padding>
-  <form #registerForm="ngForm">
+  <form #registerForm="ngForm" (submit)='displayFirstName()'>
     <ion-row>
       <ion-col>
         <ion-list inset>
