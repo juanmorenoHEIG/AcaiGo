@@ -42,7 +42,7 @@ export class AuthProvider {
     return this.auth$.pipe(map(auth => auth ? auth.token : undefined));
   }
 
-  logIn(authRequest: AuthRequest): Observable<User> {
+  logIn(authRequest: AuthRequest): Observable<AuthResponse> {
 
     const authUrl = 'https://comem-webserv-2018-2019-b.herokuapp.com/login';//'https://comem-travel-log-api.herokuapp.com/api/auth';
     return this.http.post<AuthResponse>(authUrl, authRequest).pipe(
@@ -52,7 +52,7 @@ export class AuthProvider {
       map(auth => {
         this.authSource.next(auth);
         //console.log(`User ${auth.user.name} logged in`);
-        return auth.user;
+        return auth;
       })
     );
   }
@@ -60,7 +60,7 @@ export class AuthProvider {
   logOut() {
     this.authSource.next(null);
     // TODO: remove the stored authentication response from storage when logging out.
-    this.storage.remove('auth');
+    this.storage.remove('login');
     console.log('User logged out');
   }
 
