@@ -3,6 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { UserServiceProvider} from '../../providers/user/user-service';
 import {UserResponse} from "../../models/user-response";
+import {ProduitsDetailsPage} from "../produits-details/produits-details";
+import {LoginPage} from "../login/login";
 
 /**
  * Generated class for the RegisterPage page.
@@ -48,6 +50,8 @@ export class RegisterPage {
     }, err => {
       console.warn('Could not get new user', err);
     });
+    this.navCtrl.push(LoginPage);
+
   }
 
 }
