@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {ProdListeResponse} from '../../models/prodliste-response';
 
+
 /*
   Generated class for the ProdListeServiceProvider provider.
 
@@ -16,7 +17,6 @@ export class ProdListeServiceProvider {
   }
 
   getProdListe(): Observable<ProdListeResponse> {
-    return this.httpClient
-      .get<ProdListeResponse>('https://api.icndb.com/jokes/random')
+    return this.httpClient.get<ProdListeResponse>('https://comem-webserv-2018-2019-b.herokuapp.com/products');
   }
 }

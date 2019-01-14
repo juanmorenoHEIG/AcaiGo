@@ -24,7 +24,12 @@ export class ProduitsListePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProduitsListePage');
-    this.prodListe.getProdListe().subscribe();
+    this.prodListe.getProdListe().subscribe(prodListe => {
+      this.prodListe.push(prodListe);
+    }, err => {
+      console.warn('Could not get new joke', err);
+    });
+    console.log(this.prodListe);
   }
 
   logOut() {
