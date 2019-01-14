@@ -19,9 +19,14 @@ import {UserResponse} from "../../models/user-response";
 })
 export class RegisterPage {
 
-  firstname: string;
-  users: UserResponse[];
-  displayedFirstName: string;
+  users: UserResponse[] = [];
+
+  register = {
+    address: {}
+  }
+  logForm(){
+    console.log(this.register);
+  }
 
   constructor(
     private auth: AuthProvider,
@@ -35,18 +40,14 @@ export class RegisterPage {
     console.log('ionViewDidLoad RegisterPage');
   }
 
-  addUser() {
+  submitUser() {
     //this.users.push(this.UserService.getJoke());
-    this.userRegister.addUser().subscribe(user => {
+    this.userRegister.addUser(this.register).subscribe(user => {
       this.users.push(user);
+      console.log(user);
     }, err => {
       console.warn('Could not get new user', err);
     });
-  }
-
-  displayFirstName(){
-    this.displayedFirstName = this.firstname;
-    console.log(this.displayedFirstName);
   }
 
 }
