@@ -24,7 +24,7 @@ export class AuthProvider {
       this.auth$ = this.authSource.asObservable();
     
       // TODO: load the stored authentication response from storage when the app starts.
-      this.storage.get('auth').then(auth => {
+      this.storage.get('login').then(auth => {
         // Push the loaded value into the observable stream.
         this.authSource.next(auth);
       });
@@ -34,9 +34,9 @@ export class AuthProvider {
     return this.auth$.pipe(map(auth => !!auth));
   }
 
-  getUser(): Observable<User> {
+  /*getUser(): Observable<User> {
     return this.auth$.pipe(map(auth => auth ? auth.user : undefined));
-  }
+  }*/
 
   getToken(): Observable<string> {
     return this.auth$.pipe(map(auth => auth ? auth.token : undefined));
@@ -44,14 +44,14 @@ export class AuthProvider {
 
   logIn(authRequest: AuthRequest): Observable<User> {
 
-    const authUrl = 'https://comem-travel-log-api.herokuapp.com/api/auth';
+    const authUrl = 'https://comem-webserv-2018-2019-b.herokuapp.com/login';//'https://comem-travel-log-api.herokuapp.com/api/auth';
     return this.http.post<AuthResponse>(authUrl, authRequest).pipe(
       delayWhen(auth=> {
         return this.saveAuth(auth);
       }),
       map(auth => {
         this.authSource.next(auth);
-        console.log(`User ${auth.user.name} logged in`);
+        //console.log(`User ${auth.user.name} logged in`);
         return auth.user;
       })
     );
@@ -65,7 +65,7 @@ export class AuthProvider {
   }
 
   private saveAuth(auth: AuthResponse): Observable<void> {
-    return Observable.fromPromise(this.storage.set('auth', auth));
+    return Observable.fromPromise(this.storage.set('login', auth));
   }
 
 }

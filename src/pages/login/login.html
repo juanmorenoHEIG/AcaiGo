@@ -27,13 +27,13 @@
       <!-- Username input -->
       <ion-item>
         <ion-label floating>Username</ion-label>
-        <ion-input type='text' name='username'
-                   #usernameInput='ngModel' [(ngModel)]='authRequest.username' required></ion-input>
+        <ion-input type='text' name='email'
+                   #usernameInput='ngModel' [(ngModel)]='authRequest.email' required></ion-input>
       </ion-item>
 
       <!-- Error message displayed if the username is invalid -->
       <ion-item *ngIf='usernameInput.invalid && usernameInput.dirty' no-lines>
-        <p ion-text color='danger'>Username is required.</p>
+        <p ion-text color='danger'>Email is required.</p>
       </ion-item>
 
       <!-- Password input -->
