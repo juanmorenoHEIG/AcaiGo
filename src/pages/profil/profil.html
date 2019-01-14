@@ -21,11 +21,19 @@
 <ion-content padding>
   <ion-grid>
     <ion-row class="avatar" justify-content-start>
-        <ion-col col-3>
-          <img id="profile-image" src="https://image.flaticon.com/icons/svg/3/3711.svg">
+        <ion-col col-4>
+
+            <ng-template [ngIf]="pictureData" [ngIfElse]="noPictureData">
+                <img src='data:image/jpeg;base64,{{ pictureData }}' />
+            </ng-template>
+            <ng-template #noPictureData>
+                <img id="profile-image" src="https://image.flaticon.com/icons/svg/3/3711.svg">
+            </ng-template>
         </ion-col>
-        <ion-col col-3>
+        <ion-col col-6 offset-1>
           <h3 id="profile-name">John Doe</h3>
+          <button ion-button class="submit-btn" (click)='takePicture()'>Take picture</button>
+          
         </ion-col>
     </ion-row>
     <ion-row>

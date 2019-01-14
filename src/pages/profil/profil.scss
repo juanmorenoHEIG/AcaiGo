@@ -1,18 +1,18 @@
 page-profil {
 
   img#profile-image {
-      border-radius: 100px;
+      border-radius: 50px;
       border: 1px solid #fff;
-      width: 128px;
-      height: 128px;
-      margin: 30px auto 0;
       box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
-      margin-top: 0;
+      margin-left: 10px;
+      width: 90%;
+
   }
 
   ion-row.avatar {
     display: flex;
     justify-content: center;
+    margin-bottom: 30px;
   }
 
   button.commande {

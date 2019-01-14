@@ -28,6 +28,8 @@ import { ProduitsListePage } from '../pages/produits-liste/produits-liste';
 import { ProfilPage } from '../pages/profil/profil';
 import { RegisterPage } from '../pages/register/register';
 
+import { Camera } from '@ionic-native/camera';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -78,7 +80,8 @@ import { RegisterPage } from '../pages/register/register';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     AuthInterceptorProvider,
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
+    Camera
   ]
 })
 export class AppModule {}
