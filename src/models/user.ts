@@ -1,8 +1,12 @@
 export class User {
   id: string;
-  href: string;
+  firstname: string;
   name: string;
-  tripsCount: number;
-  createdAt: string;
-  updatedAt: string;
+  email: string;
+  password;
+  address: {
+    street: string;
+    NPA: number;
+    City: string;
+  }
 }
