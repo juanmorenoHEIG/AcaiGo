@@ -1,5 +1,5 @@
 export class IngredientResponse {
-  ingrdientId: Number;
+  _id: Number;
   description: String;
   poids: Number;
 }

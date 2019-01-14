@@ -1,9 +1,9 @@
 import { IngredientResponse } from './ingredient';
 
 export class ProductResponse {
-  prodId: Number;
+  _id: Number;
   name: String;
   price: Number;
   image: String;
-  Ingredients: Ingredient[];
+  ingredients: IngredientResponse[];
 }
