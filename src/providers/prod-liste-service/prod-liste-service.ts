@@ -17,7 +17,14 @@ export class ProdListeServiceProvider {
     console.log('Hello ProdListeServiceProvider Provider');
   }
 
+<<<<<<< HEAD
+/*  getProdListe(): Observable<ProdListeResponse> {
+    return this.httpClient
+      .get<ProdListeResponse>('https://api.icndb.com/jokes/random')
+  }*/
+=======
   getProdListe(): Observable<ProdListeResponse> {
     return this.httpClient.get<ProdListeResponse>('https://comem-webserv-2018-2019-b.herokuapp.com/products');
   }
+>>>>>>> 76799aa56abf6f634255da5cb6f3777c7a8adc1e
 }
