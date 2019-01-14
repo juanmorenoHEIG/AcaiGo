@@ -5,5 +5,5 @@ export class ProductResponse {
   name: String;
   price: Number;
   image: String;
-  Ingredients: Ingredient[];
+  ingredients: Ingredient[];
 }

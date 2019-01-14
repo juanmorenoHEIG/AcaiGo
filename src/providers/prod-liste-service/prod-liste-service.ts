@@ -15,8 +15,8 @@ export class ProdListeServiceProvider {
     console.log('Hello ProdListeServiceProvider Provider');
   }
 
-  getProdListe(): Observable<ProdListeResponse> {
+/*  getProdListe(): Observable<ProdListeResponse> {
     return this.httpClient
       .get<ProdListeResponse>('https://api.icndb.com/jokes/random')
-  }
+  }*/
 }

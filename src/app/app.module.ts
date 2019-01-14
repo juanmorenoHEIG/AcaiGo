@@ -29,11 +29,9 @@ import { ProfilPage } from '../pages/profil/profil';
 import { RegisterPage } from '../pages/register/register';
 
 import { Camera } from '@ionic-native/camera';
-<<<<<<< HEAD
 import { ProdListeServiceProvider } from '../providers/prod-liste-service/prod-liste-service';
-=======
 import { PictureProvider } from '../providers/picture/picture';
->>>>>>> 47160b1a0aaa171c8b869dec81a88516dfe481d7
+import { UserServiceProvider } from '../providers/user/user-service';
 
 @NgModule({
   declarations: [
@@ -87,11 +85,9 @@ import { PictureProvider } from '../providers/picture/picture';
     AuthInterceptorProvider,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
     Camera,
-<<<<<<< HEAD
-    ProdListeServiceProvider
-=======
-    PictureProvider
->>>>>>> 47160b1a0aaa171c8b869dec81a88516dfe481d7
+    ProdListeServiceProvider,
+    PictureProvider,
+    UserServiceProvider
   ]
 })
 export class AppModule {}
