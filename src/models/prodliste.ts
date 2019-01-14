@@ -5,5 +5,5 @@ export class ProdListeResponse {
     pageSize: Number;
     total: Number;
     totalPages: Number;
-    products: ProductResponse[];
+    data: ProductResponse[];
 }
