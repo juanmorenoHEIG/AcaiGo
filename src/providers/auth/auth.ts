@@ -12,6 +12,8 @@ import { User } from '../../models/user';
 /**
  * Authentication service for login/logout.
  */
+let apiUrl = 'https://comem-webserv-2018-2019-b.herokuapp.com/api';
+
 @Injectable()
 export class AuthProvider {
 
@@ -67,5 +69,7 @@ export class AuthProvider {
   private saveAuth(auth: AuthResponse): Observable<void> {
     return Observable.fromPromise(this.storage.set('login', auth));
   }
+
+
 
 }
