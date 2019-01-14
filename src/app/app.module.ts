@@ -86,10 +86,7 @@ import { UserServiceProvider } from '../providers/user/user-service';
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
     Camera,
     ProdListeServiceProvider,
-    PictureProvider,
-    UserServiceProvider,
-    PictureProvider,
-    ProdListeServiceProvider
+    PictureProvider
   ]
 })
 export class AppModule {}
