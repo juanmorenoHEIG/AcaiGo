@@ -17,9 +17,9 @@ export class RegisterPage {
 
   constructor(
     private auth: AuthProvider,
-  public navCtrl: NavController,
+    public navCtrl: NavController,
     public navParams: NavParams,
-  ) {
+  ){
   }
 
   ionViewDidLoad() {
