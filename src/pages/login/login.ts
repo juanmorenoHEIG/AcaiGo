@@ -55,7 +55,7 @@ export class LoginPage {
 
     // Hide any previous login error.
     this.loginError = false;
-
+console.log(this.auth);
     // Perform the authentication request to the API.
     this.auth.logIn(this.authRequest).subscribe(undefined, err => {
       this.loginError = true;

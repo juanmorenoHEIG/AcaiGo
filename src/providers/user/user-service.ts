@@ -21,7 +21,7 @@ export class UserServiceProvider {
 
   patchImageProfil(imgUrl, userId): Observable<UserResponse> {
 
-        return this.httpClient.patch<UserResponse>('https://comem-webserv-2018-2019-b.herokuapp.com/'+userId, imgUrl);
+        return this.httpClient.patch<UserResponse>('https://comem-webserv-2018-2019-b.herokuapp.com/users/'+userId, imgUrl);
       }
 
   getProdListe(): Observable<UserResponse> {

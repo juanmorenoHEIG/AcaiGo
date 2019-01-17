@@ -22,8 +22,8 @@
   <ion-grid>
     <ion-row class="avatar" justify-content-start>
         <ion-col col-4>
-            <ng-template [ngIf]="picture" [ngIfElse]="noPictureData">
-                <img [src]='picture.url'/>
+            <ng-template ngIf="user?.image" ngIfElse="noPictureData">
+                <img src="{{user?.image}}" />
             </ng-template>
             <ng-template #noPictureData>
                 <img id="profile-image" src="https://image.flaticon.com/icons/svg/3/3711.svg">
@@ -37,20 +37,26 @@
     </ion-row>
     <ion-row>
       <ion-item>
-        <ion-label>E-mail:</ion-label>
-        <ion-input>{{user?.email}}</ion-input>
+          <ion-col col-12>
+              <h4 style="display:inline-block;">Email:</h4>
+              <p style="display:inline-block;" id="profil-email">{{user?.email}}</p>  
+          </ion-col>
+      </ion-item>     
+    </ion-row>
+    <ion-row>
+      <ion-item>
+          <ion-col col-12>
+              <h4 style="display:inline-block;">Mot de passe:</h4>
+              <p style="display:inline-block;" id="profil-mdp">********</p>  
+          </ion-col>
       </ion-item>
     </ion-row>
     <ion-row>
       <ion-item>
-        <ion-label>Mot de passe:</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-    </ion-row>
-    <ion-row>
-      <ion-item>
-        <ion-label>Moyen de paiement:</ion-label>
-        <ion-input></ion-input>
+          <ion-col col-12>
+              <h4 style="display:inline-block;">Moyen de paiement:</h4>
+              <p style="display:inline-block;" id="profil-mdp"></p>  
+          </ion-col>
       </ion-item>
     </ion-row>
   </ion-grid>

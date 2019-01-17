@@ -7,7 +7,7 @@ import { Storage } from '@ionic/storage';
 
 import { AuthRequest } from '../../models/auth-request';
 import { AuthResponse } from '../../models/auth-response';
-import { User } from '../../models/user';
+import { UserResponse } from '../../models/user-response';
 
 /**
  * Authentication service for login/logout.
@@ -36,7 +36,7 @@ export class AuthProvider {
     return this.auth$.pipe(map(auth => !!auth));
   }
 
-  getUser(): Observable<User> {
+  getUser(): Observable<UserResponse> {
     return this.auth$.pipe(map(auth => auth ? auth.user : undefined));
   }
 
@@ -53,7 +53,7 @@ export class AuthProvider {
       }),
       map(auth => {
         this.authSource.next(auth);
-        console.log(`User ${auth.user.name} logged in`);
+        console.log(`User ${auth.user._id} logged in`);
         return auth;
       })
     );

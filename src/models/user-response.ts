@@ -7,6 +7,7 @@ export class UserResponse {
   email: string;
   password: string;
   address: UserResponseAddress;
+  image: string;
 }
 
 
