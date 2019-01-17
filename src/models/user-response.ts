@@ -1,7 +1,7 @@
 import {UserResponseAddress} from './address';
 
 export class UserResponse {
-  _id = String;
+  _id: string;
   firstname: string;
   name: string;
   email: string;

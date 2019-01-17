@@ -1,6 +1,6 @@
-import { User } from './user';
+import { UserResponse } from './user-response';
 
 export class AuthResponse {
   token: string;
-  user: User;
+  user: UserResponse;
 }
