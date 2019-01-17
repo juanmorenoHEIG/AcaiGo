@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { User } from '../../models/user';
 import { UserResponse } from '../../models/user-response';
 
 
@@ -25,4 +24,7 @@ export class UserServiceProvider {
         return this.httpClient.patch<UserResponse>('https://comem-webserv-2018-2019-b.herokuapp.com/'+userId, imgUrl);
       }
 
+  getProdListe(): Observable<UserResponse> {
+    return this.httpClient.get<UserResponse>('https://comem-webserv-2018-2019-b.herokuapp.com/Users/');
+  }
 }

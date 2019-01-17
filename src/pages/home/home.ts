@@ -26,6 +26,8 @@ export class HomePage {
 
   tabs: HomePageTab[];
 
+  
+
   constructor(public navCtrl: NavController){
     // TODO: define some tabs.
     this.tabs = [
