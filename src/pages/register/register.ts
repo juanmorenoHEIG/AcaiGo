@@ -95,11 +95,7 @@ export class RegisterPage {
       return;
     }
     this.FormError = false;
-    if(this.register.firstname == ""){
-      this.FormError = true;
-    }
-
-
+    
 
     this.navCtrl.push(LoginPage);
   }
