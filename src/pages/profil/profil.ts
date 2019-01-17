@@ -36,6 +36,7 @@ export class ProfilPage {
     }
 
 
+
     takePicture() {
       this.pictureService.takeAndUploadPicture().subscribe(picture => {
         this.picture = picture;

@@ -19,6 +19,11 @@ export class UserServiceProvider {
     return this.httpClient.post<UserResponse>('https://comem-webserv-2018-2019-b.herokuapp.com/users', register);
   }
 
+  patchImageProfil(imgUrl, userId): Observable<UserResponse> {
+
+        return this.httpClient.patch<UserResponse>('https://comem-webserv-2018-2019-b.herokuapp.com/'+userId, imgUrl);
+      }
+
   getProdListe(): Observable<UserResponse> {
     return this.httpClient.get<UserResponse>('https://comem-webserv-2018-2019-b.herokuapp.com/Users/');
   }
