@@ -1,4 +1,7 @@
+import {UserResponseAddress} from './address';
+
 export class UserResponse {
+  _id = String;
   firstname: string;
   name: string;
   email: string;
@@ -6,8 +9,4 @@ export class UserResponse {
   address: UserResponseAddress;
 }
 
-export class UserResponseAddress {
-  street: string;
-  NPA: number;
-  City: string;
-}
+

@@ -5,6 +5,8 @@ import { LoginPage } from '../login/login';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { QimgImage } from '../../models/qimg-image';
 import { PictureProvider } from '../../providers/picture/picture';
+import { UserResponse } from '../../models/user-response';
+
 
 
 /**
@@ -21,6 +23,7 @@ import { PictureProvider } from '../../providers/picture/picture';
 export class ProfilPage {
   pictureData: string;
   picture: QimgImage;
+  user: UserResponse;
 
   constructor(
     private camera: Camera,
@@ -42,6 +45,12 @@ export class ProfilPage {
     }
 
   ionViewDidLoad() {
+    this.auth.getUser().subscribe(user => {
+      console.log("usr: "+user);
+      this.user = user;
+    }, err => {
+      console.warn('Could not get new user', err);
+    });
     console.log('ionViewDidLoad ProfilPage');
   }
 

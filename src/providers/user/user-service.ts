@@ -11,7 +11,7 @@ export class UserServiceProvider {
 
   apiUrl = 'https://comem-webserv-2018-2019-b.herokuapp.com/users';
 
-  constructor(public http: HttpClient) {
+  constructor(public httpClient: HttpClient) {
     console.log('Hello  Provider');
   }
 
@@ -22,4 +22,7 @@ export class UserServiceProvider {
   }
 */
 
+  getProdListe(): Observable<UserResponse> {
+    return this.httpClient.get<UserResponse>('https://comem-webserv-2018-2019-b.herokuapp.com/Users/');
+  }
 }

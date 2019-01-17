@@ -40,8 +40,8 @@ export class ProduitsListePage {
     this.auth.logOut();
   }
 
-  seeDetails () {
-    console.log("détails");
-    this.navCtrl.push(ProduitsDetailsPage);
+  seeDetails (product: ProductResponse) {
+    console.log("détails", product);
+    this.navCtrl.push(ProduitsDetailsPage, {product: product});
   }
 }
