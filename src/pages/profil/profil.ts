@@ -73,7 +73,7 @@ export class ProfilPage {
 
   voirCommandes(){
     console.log("test");
-    this.navCtrl.push(CommandeUserPage);
+    this.navCtrl.push(CommandeUserPage,{userId: this.user._id});
   
   }
 

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
-import { latLng, MapOptions, tileLayer, Map } from 'leaflet';
+import { latLng, MapOptions, marker, Marker, tileLayer, Map } from 'leaflet';
+import {CommandeListeUserProvider} from '../../providers/commande-liste-user/commande-liste-user';
 /**
  * Generated class for the CommandeUserPage page.
  *
@@ -12,13 +13,15 @@ import { latLng, MapOptions, tileLayer, Map } from 'leaflet';
 @Component({
   selector: 'page-commande-user',
   templateUrl: 'commande-user.html',
+  providers: [CommandeListeUserProvider]
 })
 export class CommandeUserPage {
 
   mapOptions: MapOptions;
+  mapMarkers: Marker[];
   map:Map
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation,private commandeListe: CommandeListeUserProvider) {
     const tileLayerUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     const tileLayerOptions = { maxZoom: 18 };
     this.mapOptions = {
@@ -34,6 +37,16 @@ export class CommandeUserPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CommandeUserPage');
+
+    this.commandeListe.getProdListe(this.navParams.get('userId')).subscribe(commandeListe => {
+
+      console.log("liste commandes user",commandeListe);
+
+      
+      
+    }, err => {
+      console.warn('Could not get new commandeListe', err);
+    });
 
     const geolocationPromise = this.geolocation.getCurrentPosition();
     geolocationPromise.then(position => {

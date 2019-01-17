@@ -35,6 +35,7 @@ import { UserServiceProvider } from '../providers/user/user-service';
 import { Geolocation } from '@ionic-native/geolocation'
 import { CommandeUserPage } from '../pages/commande-user/commande-user';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { CommandeListeUserProvider } from '../providers/commande-liste-user/commande-liste-user';
 
 
 @NgModule({
@@ -95,7 +96,8 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     ProdListeServiceProvider,
     PictureProvider,
     UserServiceProvider,
-    Geolocation
+    Geolocation,
+    CommandeListeUserProvider
   ]
 })
 export class AppModule {}
