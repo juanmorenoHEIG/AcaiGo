@@ -26,6 +26,7 @@ export class RegisterPage {
   register = {
     address: {}
   }
+
   logForm(){
     console.log(this.register);
   }
@@ -50,6 +51,7 @@ export class RegisterPage {
     }, err => {
       console.warn('Could not get new user', err);
     });
+    console.log(this.users);
     this.navCtrl.push(LoginPage);
 
   }

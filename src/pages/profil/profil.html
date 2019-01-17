@@ -30,7 +30,7 @@
             </ng-template>
         </ion-col>
         <ion-col col-6 offset-1>
-          <h3 id="profile-name">John Doe</h3>
+          <h3 id="profile-name" >{{user?.firstname}} {{user?.name}}</h3>
           <button ion-button class="submit-btn" (click)='takePicture()'>Take picture</button>
           
         </ion-col>
@@ -38,7 +38,7 @@
     <ion-row>
       <ion-item>
         <ion-label>E-mail:</ion-label>
-        <ion-input>E-mail</ion-input>
+        <ion-input>{{user?.email}}</ion-input>
       </ion-item>
     </ion-row>
     <ion-row>
