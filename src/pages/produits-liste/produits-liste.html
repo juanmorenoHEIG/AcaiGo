@@ -18,17 +18,33 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ng-repeat='let product of products'>
+       
+        <!-- Price input -->
+        <ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input id="namefilter" type='text' name='name' [(ngModel)]='nameFilter'></ion-input>
+        </ion-item>
+        <div padding>
+          <ion-buttons end>
+            <button ion-button block (click)='filter()'  icon-right>
+              <ion-icon name='filter'></ion-icon>
+              Filtrer
+            </button>
+          </ion-buttons>
+        </div>
+      
+
+  <ion-card *ngFor='let product of products'>
     <div text-center>
       <img class="bowl" src="../../assets/imgs/acai_bowl.png"/>
     </div>
     <ion-card-content>
       <ion-card-title>
-        {{product.name}}
+        {{product?.name}}
       </ion-card-title>
       <a class="details button" (click)='seeDetails()'>Ingrédients</a>
       <p>
-        {{product.price}} CHF
+        {{product?.price}} CHF
       </p>
         <ion-row>
           <ion-col class="col-button" col-6>
