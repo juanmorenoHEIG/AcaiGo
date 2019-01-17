@@ -7,7 +7,7 @@ import { Storage } from '@ionic/storage';
 
 import { AuthRequest } from '../../models/auth-request';
 import { AuthResponse } from '../../models/auth-response';
-import { User } from '../../models/user';
+//import { User } from '../../models/user';
 
 /**
  * Authentication service for login/logout.

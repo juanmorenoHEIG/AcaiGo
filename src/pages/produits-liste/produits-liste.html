@@ -9,7 +9,7 @@
   <ion-navbar>
     <ion-title>Produits</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)='seeCart()'>
         <ion-badge></ion-badge>
         <ion-icon name="cart"></ion-icon>
       </button>
@@ -22,7 +22,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ng-repeat='let product of products'>
+  <ion-card *ngFor='let product of products'>
     <div text-center>
       <img class="bowl" src="../../assets/imgs/acai_bowl.png"/>
     </div>
@@ -44,7 +44,7 @@
           </ion-col>
           <ion-col class="col-button" col-6>
             <ion-buttons end>
-              <button class="ajouter" ion-button (click)='addProduct()'>
+              <button class="ajouter" ion-button (click)='addProduct(product)'>
                 Ajouter
               </button>
             </ion-buttons>

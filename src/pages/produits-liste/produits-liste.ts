@@ -15,17 +15,24 @@ import {PanierPage} from "../panier/panier";
  * Ionic pages and navigation.
  */
 
+
 @Component({
   selector: 'page-produits-liste',
   templateUrl: 'produits-liste.html',
   providers: [ProdListeServiceProvider]
 })
+
+
 export class ProduitsListePage {
+
 
   products: ProductResponse[];
 
+  addedProducts: ProductResponse[];
+
   constructor(private auth: AuthProvider, public navCtrl: NavController, public navParams: NavParams, private prodListe: ProdListeServiceProvider) {
 
+    this.addedProducts = [];
   }
 
   ionViewDidLoad() {
@@ -49,9 +56,29 @@ export class ProduitsListePage {
     this.navCtrl.push(ProduitsDetailsPage, {product: product});
   }
 
-  addProduct () {
 
-    this.navCtrl.push(PanierPage);
+  addProduct (product: ProductResponse) {
+
+      //console.log(products);
+    this.addedProducts.push(product);
+
+    console.log(this.addedProducts);
+
+  }
+
+
+/*  this.products.forEach(function(product){
+    //console.log(products);
+    allAddedProducts.push(products);
+  })
+  console.log(allAddedProducts);
+
+  //this.navCtrl.push(PanierPage, {product: product});*/
+
+  seeCart (){
+
+    console.log("panier");
+    this.navCtrl.push(PanierPage, {products:this.addedProducts});
 
   }
 }
