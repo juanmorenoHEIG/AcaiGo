@@ -6,6 +6,7 @@ import {ProduitsDetailsPage} from '../produits-details/produits-details';
 import {RegisterPage} from "../register/register";
 import {ProdListeServiceProvider} from '../../providers/prod-liste-service/prod-liste-service';
 import { ProductResponse } from '../../models/product';
+import {PanierPage} from "../panier/panier";
 
 /**
  * Generated class for the ProduitsListePage page.
@@ -24,11 +25,14 @@ export class ProduitsListePage {
   products: ProductResponse[];
 
   constructor(private auth: AuthProvider, public navCtrl: NavController, public navParams: NavParams, private prodListe: ProdListeServiceProvider) {
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProduitsListePage');
     this.prodListe.getProdListe().subscribe(prodListe => {
+
+      console.log(prodListe.data[0]);
       this.products = prodListe.data;
     }, err => {
       console.warn('Could not get new prodliste', err);
@@ -43,5 +47,11 @@ export class ProduitsListePage {
   seeDetails () {
     console.log("détails");
     this.navCtrl.push(ProduitsDetailsPage);
+  }
+
+  addProduct () {
+
+    this.navCtrl.push(PanierPage);
+
   }
 }

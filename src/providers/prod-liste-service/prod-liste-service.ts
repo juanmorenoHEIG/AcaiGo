@@ -20,4 +20,10 @@ export class ProdListeServiceProvider {
   getProdListe(): Observable<ProdListeResponse> {
     return this.httpClient.get<ProdListeResponse>('https://comem-webserv-2018-2019-b.herokuapp.com/products');
   }
+
+  getProductById(productId: Number): Observable<ProdListeResponse> {
+    return this.httpClient
+      .get<ProdListeResponse>('https://comem-webserv-2018-2019-b.herokuapp.com/products' + + productId);
+
+  }
 }
