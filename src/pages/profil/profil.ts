@@ -6,6 +6,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 import { QimgImage } from '../../models/qimg-image';
 import { PictureProvider } from '../../providers/picture/picture';
 import { UserResponse } from '../../models/user-response';
+import { UserServiceProvider } from '../../providers/user/user-service';
+import { ImgRequest } from '../../models/imgRequest';
 
 
 
@@ -24,13 +26,15 @@ export class ProfilPage {
   pictureData: string;
   picture: QimgImage;
   user: UserResponse;
+  image: UserResponse;
 
   constructor(
     private camera: Camera,
     private pictureService: PictureProvider, 
     private auth: AuthProvider, 
     public navCtrl: NavController, 
-    public navParams: NavParams) 
+    public navParams: NavParams,
+    private userService:UserServiceProvider) 
     {
 
     }
@@ -40,15 +44,22 @@ export class ProfilPage {
     takePicture() {
       this.pictureService.takeAndUploadPicture().subscribe(picture => {
         this.picture = picture;
+        this.image = new UserResponse();
+        this.image.image = this.picture.url;
+        this.userService.patchImageProfil(this.image, this.user._id).subscribe(undefined, err => {
+          console.warn('Could not patch image to user', err);
+        });
+
       }, err => {
         console.warn('Could not take picture', err);
       });
+
     }
 
   ionViewDidLoad() {
     this.auth.getUser().subscribe(user => {
-      console.log("usr: "+user);
       this.user = user;
+      console.log(this.user.image);
     }, err => {
       console.warn('Could not get new user', err);
     });

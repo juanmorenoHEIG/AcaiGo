@@ -7,6 +7,8 @@ import {RegisterPage} from "../register/register";
 import {ProdListeServiceProvider} from '../../providers/prod-liste-service/prod-liste-service';
 import { ProductResponse } from '../../models/product';
 import {PanierPage} from "../panier/panier";
+import { NgModel } from '@angular/forms';
+
 
 /**
  * Generated class for the ProduitsListePage page.
@@ -29,6 +31,7 @@ export class ProduitsListePage {
   products: ProductResponse[];
 
   addedProducts: ProductResponse[];
+  nameFilter: string;
 
   constructor(private auth: AuthProvider, public navCtrl: NavController, public navParams: NavParams, private prodListe: ProdListeServiceProvider) {
 
@@ -75,10 +78,29 @@ export class ProduitsListePage {
 
   //this.navCtrl.push(PanierPage, {product: product});*/
 
-  seeCart (){
+  seeCart () {
 
     console.log("panier");
-    this.navCtrl.push(PanierPage, {products:this.addedProducts});
+    this.navCtrl.push(PanierPage, {products: this.addedProducts});
+  }
 
+  filter(){
+    console.log("fil"+this.nameFilter);
+    if(this.nameFilter){
+      this.prodListe.getProdListeFiltered(this.nameFilter).subscribe(prodListe => {
+        console.log("listefilt:" +prodListe.data);
+        this.products = prodListe.data;
+        console.log("this",this.products);
+      }, err => {
+        console.warn('Could not get new prodliste', err);
+      });
+    }else{
+      this.prodListe.getProdListe().subscribe(prodListe => {
+
+        this.products = prodListe.data;
+      }, err => {
+        console.warn('Could not get new prodliste', err);
+      });
+    }
   }
 }
