@@ -32,6 +32,7 @@ import { Camera } from '@ionic-native/camera';
 import { ProdListeServiceProvider } from '../providers/prod-liste-service/prod-liste-service';
 import { PictureProvider } from '../providers/picture/picture';
 import { UserServiceProvider } from '../providers/user/user-service';
+import {OrderServiceProvider} from "../providers/order/order-service";
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { UserServiceProvider } from '../providers/user/user-service';
     Camera,
     ProdListeServiceProvider,
     PictureProvider,
-    UserServiceProvider
+    UserServiceProvider,
+    OrderServiceProvider
   ]
 })
 export class AppModule {}
