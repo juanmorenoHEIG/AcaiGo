@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { UserServiceProvider} from '../../providers/user/user-service';
@@ -24,8 +25,33 @@ export class RegisterPage {
   users: UserResponse[] = [];
 
   register = {
-    address: {}
-  }
+    firstname: "",
+    name: "",
+    email: "",
+    password: "",
+    address: {
+      street: "",
+      NPA: "",
+      City: "",
+    },
+    image: "",
+  };
+
+  /*firstnameinvalide: boolean;
+  nameinvalide: boolean;
+  emailinvalide: boolean;
+  passwordinvalide: boolean;
+  streetinvalide: boolean;
+  npainvalide: boolean;
+  cityinvalide: boolean;
+  imageinvalide: boolean;*/
+  FormError: boolean;
+
+
+  @ViewChild(NgForm)
+  form: NgForm;
+
+  
 
   logForm(){
     console.log(this.register);
@@ -41,10 +67,14 @@ export class RegisterPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
+    console.log(this.register);
   }
 
   submitUser() {
     //this.users.push(this.UserService.getJoke());
+
+    
+    console.log(this.register);
     this.userRegister.addUser(this.register).subscribe(user => {
       this.users.push(user);
       console.log(user);
@@ -54,6 +84,24 @@ export class RegisterPage {
     console.log(this.users);
     this.navCtrl.push(LoginPage);
 
+  }
+
+  onSubmit($event){
+    // Prevent default HTML form behavior.
+    $event.preventDefault();
+
+    // Do not do anything if the form is invalid.
+    if (this.form.invalid) {
+      return;
+    }
+    this.FormError = false;
+    if(this.register.firstname == ""){
+      this.FormError = true;
+    }
+
+
+
+    this.navCtrl.push(LoginPage);
   }
 
 }
