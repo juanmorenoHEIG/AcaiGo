@@ -32,6 +32,7 @@ import { Camera } from '@ionic-native/camera';
 import { ProdListeServiceProvider } from '../providers/prod-liste-service/prod-liste-service';
 import { PictureProvider } from '../providers/picture/picture';
 import { UserServiceProvider } from '../providers/user/user-service';
+import {OrderServiceProvider} from "../providers/order/order-service";
 import { Geolocation } from '@ionic-native/geolocation'
 import { CommandeUserPage } from '../pages/commande-user/commande-user';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
@@ -97,7 +98,8 @@ import { CommandeListeUserProvider } from '../providers/commande-liste-user/comm
     PictureProvider,
     UserServiceProvider,
     Geolocation,
-    CommandeListeUserProvider
+    CommandeListeUserProvider,
+    OrderServiceProvider,
   ]
 })
 export class AppModule {}

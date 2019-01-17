@@ -20,11 +20,21 @@
         <li>Validation</li>
         <li>C'est fait!</li>
       </ul>
-  <ion-list>
-    <p>Veuillez indiquer la date de retrait</p>
-    <ion-item>
-      <ion-label fixed>Date</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
-  </ion-list>
+  <p>Veuillez indiquer la date de retrait</p>
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>Date</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+  <ion-row>
+    <ion-footer>
+      <ion-col>
+        <button (click)="submitDate()" ion-button class="submit-btn" full type="submit">CONTINUER</button>
+      </ion-col>
+    </ion-footer>
+  </ion-row>
 </ion-content>
+
