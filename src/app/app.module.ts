@@ -33,6 +33,10 @@ import { ProdListeServiceProvider } from '../providers/prod-liste-service/prod-l
 import { PictureProvider } from '../providers/picture/picture';
 import { UserServiceProvider } from '../providers/user/user-service';
 import {OrderServiceProvider} from "../providers/order/order-service";
+import { Geolocation } from '@ionic-native/geolocation'
+import { CommandeUserPage } from '../pages/commande-user/commande-user';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+
 
 @NgModule({
   declarations: [
@@ -51,13 +55,15 @@ import {OrderServiceProvider} from "../providers/order/order-service";
     ProduitsDetailsPage,
     ProduitsListePage,
     ProfilPage,
-    RegisterPage
+    RegisterPage,
+    CommandeUserPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    LeafletModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -76,7 +82,8 @@ import {OrderServiceProvider} from "../providers/order/order-service";
     ProduitsDetailsPage,
     ProduitsListePage,
     ProfilPage,
-    RegisterPage
+    RegisterPage,
+    CommandeUserPage
   ],
   providers: [
     StatusBar,
@@ -89,7 +96,8 @@ import {OrderServiceProvider} from "../providers/order/order-service";
     ProdListeServiceProvider,
     PictureProvider,
     UserServiceProvider,
-    OrderServiceProvider
+    OrderServiceProvider,
+    Geolocation
   ]
 })
 export class AppModule {}

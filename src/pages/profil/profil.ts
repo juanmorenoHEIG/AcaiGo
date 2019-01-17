@@ -8,6 +8,7 @@ import { PictureProvider } from '../../providers/picture/picture';
 import { UserResponse } from '../../models/user-response';
 import { UserServiceProvider } from '../../providers/user/user-service';
 import { ImgRequest } from '../../models/imgRequest';
+import { CommandeUserPage} from '../commande-user/commande-user';
 
 
 
@@ -68,6 +69,12 @@ export class ProfilPage {
 
   logOut() {
     this.auth.logOut();
+  }
+
+  voirCommandes(){
+    console.log("test");
+    this.navCtrl.push(CommandeUserPage);
+  
   }
 
 }
