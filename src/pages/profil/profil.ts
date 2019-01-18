@@ -86,7 +86,7 @@ export class ProfilPage {
           this.auth.updateUser(user).subscribe();
           this.toggleForm();
         }, err => {
-          console.warn('Could not patch image to user', err);
+          console.warn('Could not patch email user', err);
         }); 
  
       }
@@ -95,8 +95,13 @@ export class ProfilPage {
 
     deleteUserAccount()
     {
-      
-console.log("yaaaaay");
+      this.userService.deleteUser(this.user._id).subscribe(user => {
+        this.auth.updateUser(user).subscribe();
+        }, err => {
+        console.warn('Could not delete user', err);
+      });
+this.logOut();
+console.log("OKOK");
     }
 
   ionViewDidLoad() {
