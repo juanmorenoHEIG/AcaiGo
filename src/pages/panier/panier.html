@@ -7,12 +7,38 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Panier</ion-title>
+    <ion-title> Votre panier</ion-title>
   </ion-navbar>
   
 </ion-header>
 
+  <ion-content padding>
+    <!-- if the cart has no elements -->
+    <!-- if the cart has some products -->
+      <ion-list>
+          <ion-row *ngFor='let product of products'>
+            <ion-thumbnail item-left>
+              <img src="../../assets/imgs/acai_bowl.png">
+            </ion-thumbnail>
+            <h2>{{ product?.name }}</h2><br/>
+            <h4>CHF {{ product?.price }}</h4>
+          </ion-row>
+        <ion-row>
+          <h3>Total:</h3>
+        </ion-row>
+      </ion-list>
+  </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col class="col-button" col-12>
+        <ion-buttons>
+          <button class="order" (click)='order()' ion-button solid>
+            Commander
+          </button>
+        </ion-buttons>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
 
-<ion-content padding>
-
-</ion-content>

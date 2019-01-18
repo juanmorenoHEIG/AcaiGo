@@ -9,6 +9,10 @@
   <ion-navbar>
     <ion-title>Produits</ion-title>
     <ion-buttons end>
+      <button ion-button icon-only (click)='seeCart()'>
+        <ion-badge></ion-badge>
+        <ion-icon name="cart"></ion-icon>
+      </button>
       <button ion-button icon-only (click)='logOut()'>
         <ion-icon name='log-out'></ion-icon>
       </button>
@@ -40,7 +44,7 @@
           </ion-col>
           <ion-col class="col-button" col-6>
             <ion-buttons end>
-              <button class="ajouter" ion-button>
+              <button class="ajouter" ion-button (click)='addProduct(product)'>
                 Ajouter
               </button>
             </ion-buttons>

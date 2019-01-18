@@ -65,7 +65,7 @@
       </ion-item>
     </ion-row>
     
-    <button ion-button class="submit-btn" full type="submit">Voir toutes les commandes</button>
+    <button ion-button class="submit-btn" full (click)='voirCommandes()'>Voir toutes les commandes</button>
     <button (click)='toggleConfirmDelete()'  id="deleteUser" ion-item> Supprimer mon compte AcaiGo</button>
     <ng-container *ngIf="deleteUser">
         <button ion-button class="submit-btn" (click)="deleteUserAccount()">Oui, supprimer mon compte</button>

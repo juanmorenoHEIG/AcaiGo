@@ -10,6 +10,8 @@ import { UserServiceProvider } from '../../providers/user/user-service';
 import { ImgRequest } from '../../models/imgRequest';
 import { Subscription } from 'rxjs';
 import { NgForm } from '@angular/forms';
+import { CommandeUserPage} from '../commande-user/commande-user';
+
 
 
 /**
@@ -114,6 +116,12 @@ console.log("yaaaaay");
 
   logOut() {
     this.auth.logOut();
+  }
+
+  voirCommandes(){
+    console.log("test");
+    this.navCtrl.push(CommandeUserPage,{userId: this.user._id});
+  
   }
 
 }
