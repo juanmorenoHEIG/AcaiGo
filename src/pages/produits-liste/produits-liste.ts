@@ -43,6 +43,7 @@ export class ProduitsListePage {
     this.prodListe.getProdListe().subscribe(prodListe => {
 
       console.log(prodListe.data[0]);
+      console.log(this.products);
       this.products = prodListe.data;
     }, err => {
       console.warn('Could not get new prodliste', err);

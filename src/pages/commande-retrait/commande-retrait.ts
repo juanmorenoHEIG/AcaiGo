@@ -26,7 +26,7 @@ export class CommandeRetraitPage {
 
   orders: OrderResponse[];
 
-  date: string;
+  date: Date;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private orderDate: OrderServiceProvider) {
@@ -34,6 +34,7 @@ export class CommandeRetraitPage {
   }
 
   ionViewDidLoad() {
+    console.log("test");
     console.log('ionViewDidLoad CommandeRetraitPage');
     console.log(this.navParams);
     console.log(this.products);
@@ -42,9 +43,11 @@ export class CommandeRetraitPage {
     this.products = this.navParams.get('products');
   }
 
-  submitDate(){
+  submitDate(date){
+    console.log(date);
     console.log("submit date");
-    this.navCtrl.push(CommandePaiementPage);
+
+    //this.navCtrl.push(CommandePaiementPage);
   }
 
 }
