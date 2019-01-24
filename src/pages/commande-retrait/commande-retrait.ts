@@ -6,6 +6,7 @@ import { OrderResponse } from "../../models/order";
 import {LoginPage} from "../login/login";
 import {UserServiceProvider} from "../../providers/user/user-service";
 import {OrderServiceProvider} from "../../providers/order/order-service";
+import {CommandePaiementPage} from "../commande-paiement/commande-paiement";
 
 
 /**
@@ -43,7 +44,7 @@ export class CommandeRetraitPage {
 
   submitDate(){
     console.log("submit date");
-
+    this.navCtrl.push(CommandePaiementPage);
   }
 
 }

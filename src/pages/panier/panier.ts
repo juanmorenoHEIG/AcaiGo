@@ -56,5 +56,7 @@ export class PanierPage {
     //this.newOrder.orderLines[0].productId
      console.log(this.newOrder)
     //this.navCtrl.push(CommandeRetraitPage, {products: this.products});
+
+    this.navCtrl.push(CommandeRetraitPage);
   }
 }
