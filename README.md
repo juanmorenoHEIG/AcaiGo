@@ -1,4 +1,4 @@
-![alt text](src/assets/imgs/logo.png)
+![alt text](src/assets/imgs/acai.png)
 
 # ACAIGO 
 
