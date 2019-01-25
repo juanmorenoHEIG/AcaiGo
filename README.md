@@ -58,7 +58,7 @@ npm install
 
   Download [Ionic DevApp](https://itunes.apple.com/us/app/ionic-devapp/id1233447133?mt=8) on the App Store
   
-  Create an account and login.
+  Login or Create New Account.
   
   Follow the instructions on the App.
   
