@@ -23,10 +23,9 @@ You can see all the ingredients of each bowls before choosing it. All your order
 * Search a product
 * See product details
 * Create an order of products
-* Edit the quantity of the product
-* See the user profile
-* Edit the user email
-* Delete the user account
+* See the user's profile
+* Edit the user's email
+* Delete the user's account
 * Geolocate the user's orders
 * Take a profile picture
 
