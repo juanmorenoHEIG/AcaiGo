@@ -56,7 +56,7 @@ npm install
 
 ### Ionic DevApp
 
-  Download [Ionic DevApp](https://itunes.apple.com/us/app/ionic-devapp/id1233447133?mt=8) on the App Store
+  Download Ionic DevApp on the [App Store](https://itunes.apple.com/us/app/ionic-devapp/id1233447133?mt=8) or Google Store
   
   Login or Create New Account.
   
@@ -71,6 +71,7 @@ npm install
 
 <img src="screenshots/register.jpg" width="50%" height="50%">
 
+
 #### Step 2: Pick a bowl or see the details of the product
 
 <img src="screenshots/products.jpg" width="50%" height="50%">
@@ -79,9 +80,11 @@ npm install
 <img src="screenshots/details.jpg" width="50%" height="50%">
 
 
+
 #### Step 3: Click on add and you can see your shopping cart
 
 <img src="screenshots/panier.jpg" width="50%" height="50%">
+
 
 
 #### Step 4: Click on continue, you now have to pick the date when you want to pick up the bowl from the store
@@ -89,7 +92,22 @@ npm install
 <img src="screenshots/date.jpg" width="50%" height="50%">
 
 
+
 #### Step 5: Click on continue, your order is now geolocated
 
 <img src="screenshots/geoloc.jpg" width="50%" height="50%">
+
+
+
+#### Step 6: Validate your order
+
+<img src="screenshots/validation.jpg" width="50%" height="50%">
+
+
+
+#### Your profile
+
+You can edit your e-mail address or delete your account. But also take your profile picture!
+
+<img src="screenshots/user.jpg" width="50%" height="50%">
 
