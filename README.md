@@ -44,7 +44,8 @@ Project is created with:
 
 ## Setup
 
-Clone this project, then:
+Clone the source locally:
+
 ```
 git clone git@github.com:juanmorenoHEIG/AcaiGo.git
 cd acaiGo_App
@@ -53,9 +54,7 @@ npm install
 
 ## How to launch the application
 
-### For IOS users
-
-#### Ionic DevApp
+### Ionic DevApp
 
   Download [Ionic DevApp](https://itunes.apple.com/us/app/ionic-devapp/id1233447133?mt=8) on the App Store
   
@@ -63,6 +62,4 @@ npm install
   
   Follow the instructions on the App.
   
-### For Android users
-
 ## Demo
