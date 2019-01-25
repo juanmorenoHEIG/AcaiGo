@@ -12,4 +12,8 @@ export class OrderServiceProvider {
     console.log('Hello ProdListeServiceProvider Provider');
   }
 
+
+  pushOrder(order): Observable<OrderResponse> {
+          return this.httpClient.post<OrderResponse>('https://comem-webserv-2018-2019-b.herokuapp.com/orders', order);
+  }
 }
