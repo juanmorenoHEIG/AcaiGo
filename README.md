@@ -32,11 +32,11 @@ The AçaiGo App gives you the quickest, easiest way to place an order for acai b
 ## Technologies
 Project is created with:
 
-* [Angular: version 5.2.11]("https://angularjs.org/")
-* [Ionic: version 3]("https://ionicframework.com/getting-started/")
-* [Cordova: version]("https://cordova.apache.org/") 
-* [leaflet: version 1.4.0] ("https://leafletjs.com/")
-* [HTML 5] ("https://www.w3.org/TR/html52/")
+* [Angular: version 5.2.11](https://angularjs.org/)
+* [Ionic: version 3](https://ionicframework.com/getting-started/)
+* [Cordova: version](https://cordova.apache.org/) 
+* [leaflet: version 1.4.0](https://leafletjs.com/)
+* [HTML 5](https://www.w3.org/TR/html52/)
 
 ## Launch
 
