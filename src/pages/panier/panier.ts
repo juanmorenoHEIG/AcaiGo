@@ -37,6 +37,7 @@ export class PanierPage {
     //this.orders = this.navParams.get('orders');
     console.log("test");
     console.log(this.navParams.data);
+
     this.products = this.navParams.get('products');
     console.log("currentnumber" + this.currentNumber);
 
