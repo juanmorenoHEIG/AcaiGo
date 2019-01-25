@@ -26,28 +26,37 @@ export class CommandeRetraitPage {
 
   orders: OrderResponse[];
 
-  date: Date;
-
+  day: any  = new Date().toISOString();
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private orderDate: OrderServiceProvider) {
 
+    this.orders = this.navParams.data.newOrder;
   }
 
   ionViewDidLoad() {
     console.log("test");
     console.log('ionViewDidLoad CommandeRetraitPage');
-    console.log(this.navParams);
-    console.log(this.products);
+    console.log("commande retrait");
+    console.log(this.navParams.data);
+    console.log("orders");
     console.log(this.orders);
 
     this.products = this.navParams.get('products');
+    console.log("test" + this.day);
   }
 
-  submitDate(date){
-    console.log(date);
+  submitDate(){
     console.log("submit date");
 
-    //this.navCtrl.push(CommandePaiementPage);
+
+    console.log(this.day);
+    //this.orders.push(this.day);
+    //this.navParams.data.push(this.day);
+    //this.orders[0].pickup_date;
+    console.log(this.orders);
+
+    //this.orders.push(addDate);
+    //this.navCtrl.push(CommandePaiementPage, {day: this.day});
   }
 
 }

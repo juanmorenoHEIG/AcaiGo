@@ -34,7 +34,7 @@ export class PanierPage {
   ionViewDidLoad() {
     //this.orders = this.navParams.get('orders');
     console.log("test");
-    console.log(this.navParams);
+    console.log(this.navParams.data);
     this.products = this.navParams.get('products');
 
   }
@@ -53,7 +53,7 @@ export class PanierPage {
       //console.log(ordernew);
     });
     //this.newOrder.orderLines[0].productId
-     console.log(this.newOrder)
+     console.log(this.newOrder);
     //this.navCtrl.push(CommandeRetraitPage, {products: this.products});
 
     this.navCtrl.push(CommandeRetraitPage, {newOrder: this.newOrder});

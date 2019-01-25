@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
+import { OrderResponse } from "../../models/order";
+
 
 /**
  * Generated class for the CommandePaiementPage page.
@@ -20,6 +22,7 @@ export class CommandePaiementPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CommandePaiementPage');
+    console.log(this.navParams);
 
     const geolocationPromise = this.geolocation.getCurrentPosition();
     geolocationPromise.then(position => {
