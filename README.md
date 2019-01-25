@@ -3,7 +3,7 @@
 <hr>
 
 # ACAIGO 
-
+The AçaiGo App gives you the quickest, easiest way to place an order for acai bowls and then go to the store to pick them up.
 
 ## Table of contents
 * [General info](#general-info)
