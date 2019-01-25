@@ -64,10 +64,19 @@ npm install
   
 ## Demo
 
-### Step 1: Login or create new account
+#### Step 1: Login or create new account
 
 <img src="screenshots/login.jpg" width="50%" height="50%">
 
 <img src="screenshots/register.jpg" width="50%" height="50%">
 
+#### Step 2: Pick a bowl or see the details of the product
+
+<img src="screenshots/product.jpg" width="50%" height="50%">
+
+<img src="screenshots/details.jpg" width="50%" height="50%">
+
+#### Step 3: Click on add and you can see your shopping cart
+
+<img src="screenshots/panier.jpg" width="50%" height="50%">
 
