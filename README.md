@@ -72,11 +72,19 @@ npm install
 
 #### Step 2: Pick a bowl or see the details of the product
 
-<img src="screenshots/product.jpg" width="50%" height="50%">
+<img src="screenshots/products.jpg" width="50%" height="50%">
 
 <img src="screenshots/details.jpg" width="50%" height="50%">
 
 #### Step 3: Click on add and you can see your shopping cart
 
 <img src="screenshots/panier.jpg" width="50%" height="50%">
+
+#### Step 4: Click on continue, you now have to pick the date when you want to pick up the bowl from the store
+
+<img src="screenshots/date.jpg" width="50%" height="50%">
+
+#### Step 5: Click on continue, your order is now geolocated
+
+<img src="screenshots/geoloc.jpg" width="50%" height="50%">
 
