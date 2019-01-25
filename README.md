@@ -2,7 +2,7 @@
 
 <hr>
 
-<h3>The AçaiGo App gives you the quickest, easiest way to place an order for acai bowls and then go to the store to pick them up.</h3>
+<p>The AçaiGo App gives you the quickest, easiest way to place an order for acai bowls and then go to the store to pick them up.</p>
 
 ## Table of contents
 * [General info](#general-info)
@@ -26,11 +26,10 @@ Project is created with:
 
 <h3> For developpers </h3>
 
-<div class="highlight highlight-source-shell">
-Clone the source locally:
-</div>
-
-
+  ```
+  Clone the source locally:
+  ```
+  
 ## Setup
 
 ## Demo
