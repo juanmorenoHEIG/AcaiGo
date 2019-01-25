@@ -3,6 +3,9 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { latLng, MapOptions, marker, Marker, tileLayer, Map } from 'leaflet';
 import {CommandeListeUserProvider} from '../../providers/commande-liste-user/commande-liste-user';
+import {OrderResponse} from '../../models/order';
+import {pickupPlaceResponse} from '../../models/pickupPlace';
+import { JsonPipe } from '@angular/common';
 /**
  * Generated class for the CommandeUserPage page.
  *
@@ -19,7 +22,11 @@ export class CommandeUserPage {
 
   mapOptions: MapOptions;
   mapMarkers: Marker[];
-  map:Map
+  map:Map;
+  
+  pickupPlace: pickupPlaceResponse;
+  order: OrderResponse;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation,private commandeListe: CommandeListeUserProvider) {
     const tileLayerUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -31,19 +38,31 @@ export class CommandeUserPage {
       zoom: 13,
       center: latLng(46.778186, 6.641524)
     };
-
+    
+    this.mapMarkers = []   
     
   }
 
-  ionViewDidLoad() {
+  ionViewDidLoad(){
     console.log('ionViewDidLoad CommandeUserPage');
 
     this.commandeListe.getProdListe(this.navParams.get('userId')).subscribe(commandeListe => {
 
       console.log("liste commandes user",commandeListe);
+      
+      //var j = JSON.parse(commandeListe)
+      var j = Object.keys(commandeListe).length;
+     //j--;
 
-      
-      
+      for(var i = 0; i < j; i++){
+        //console.log(commandeListe[i].pickup_place)
+        //this.pickupPlace = commandeListe[i].pickup_place
+        this.order = JSON.parse(JSON.stringify(commandeListe[i]));
+        console.log(this.order.pickup_place[0].location_lon)
+        this.mapMarkers.push(marker([this.order.pickup_place[0].location_lat,this.order.pickup_place[0].location_lon]).bindTooltip(this.order.state))
+               
+      }
+
     }, err => {
       console.warn('Could not get new commandeListe', err);
     });

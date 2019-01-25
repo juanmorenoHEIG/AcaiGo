@@ -71,6 +71,7 @@ export class ProduitsListePage {
 
   addProduct (product: ProductResponse) {
 
+<<<<<<< HEAD
     let alreadyInCart = false;
     if(this.orders.orderLines.length > 0)
     {
@@ -89,6 +90,20 @@ export class ProduitsListePage {
     { 
       this.orders.orderLines.push(new OrderLinesResponse (product._id, 1));
     }
+=======
+      //console.log(products);
+    this.addedProducts.push(product);
+    let index = this.addedProducts.findIndex(x => x._id == product._id);
+    console.log(index);
+/*    this.productQuantity = index;
+
+    console.log(this.productQuantity);*/
+    //console.log(product);
+
+// ...
+
+    //console.log(this.addedProducts);
+>>>>>>> 652dc90f1ec24462cf3a56004d9603bfc08c4795
 
   }
 

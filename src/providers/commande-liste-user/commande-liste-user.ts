@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CommandeListeUserM} from '../../models/commandeListeUser';
+import { OrderResponse} from '../../models/order';
 import { Observable } from 'rxjs/Rx';
 
 /*
@@ -16,8 +16,8 @@ export class CommandeListeUserProvider {
     console.log('Hello CommandeListeUserProvider Provider');
   }
 
-  getProdListe(userId): Observable<CommandeListeUserM> {
-    return this.httpClient.get<CommandeListeUserM>('https://comem-webserv-2018-2019-b.herokuapp.com/users/'+userId+'/orders');
+  getProdListe(userId): Observable<OrderResponse> {
+    return this.httpClient.get<OrderResponse>('https://comem-webserv-2018-2019-b.herokuapp.com/users/'+userId+'/orders');
   }
 
 }
