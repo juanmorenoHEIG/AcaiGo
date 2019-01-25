@@ -66,8 +66,8 @@ npm install
 
 ### Step 1: Login or create new account
 
-![alt text](screenshots/login.jpg)
+<img src="screenshots/login.jpg" width="50%" height="50%">
 
-![alt text](screenshots/register.jpg)
+<img src="screenshots/register.jpg" width="50%" height="50%">
 
 
