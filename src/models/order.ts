@@ -3,7 +3,7 @@ import { pickupPlaceResponse } from './pickupPlace';
 
 
 export class OrderResponse {
-  pickup_place: pickupPlaceResponse[];
+  pickup_place: pickupPlaceResponse;
   _id: string;
   pickup_date: string;
   state: string;
