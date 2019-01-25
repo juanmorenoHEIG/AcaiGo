@@ -56,7 +56,7 @@ npm install
 
 ### Ionic DevApp
 
-  Download Ionic DevApp on the [App Store](https://itunes.apple.com/us/app/ionic-devapp/id1233447133?mt=8) or Google Store
+  Download Ionic DevApp on the [App Store](https://itunes.apple.com/us/app/ionic-devapp/id1233447133?mt=8) or [Google Store](https://play.google.com/store/apps/details?id=io.ionic.devapp&hl=fr_CH)
   
   Login or Create New Account.
   
