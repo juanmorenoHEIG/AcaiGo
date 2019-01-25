@@ -1,4 +1,4 @@
-![alt text](src/assets/imgs/acai.png)
+<img src="src/assets/imgs/acai.png" width="100" height="100">
 
 # ACAIGO 
 
