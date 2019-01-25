@@ -13,7 +13,7 @@ The creation of this application was done as part of the "AppMob" course at [HEI
 
 ## The application
 The AçaiGo App gives you the quickest, easiest way to place an order for acai bowls and then go to the store to pick them up.
-You can see all the ingredients of each bowls before choosing it. All your orders will be geolocated so that you can see where you were when you placed an order. Isn't it great?
+You can see all the ingredients of each bowls before choosing it. All your orders will be geolocated so that you can see where you were when you placed an order. Isn't it great? :smiley:
 
 ### Features
 
