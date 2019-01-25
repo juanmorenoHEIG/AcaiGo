@@ -1,4 +1,6 @@
-<img src="src/assets/imgs/acai.png" width="100" height="100">
+<img src="src/assets/imgs/acai.png" width="50%" height="50%">
+
+<hr>
 
 # ACAIGO 
 
