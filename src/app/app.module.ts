@@ -19,7 +19,7 @@ import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-inte
 // New
 import { AProposPage } from '../pages/a-propos/a-propos';
 import { CommandeConfirmationPage } from '../pages/commande-confirmation/commande-confirmation';
-import { CommandePaiementPage } from '../pages/commande-paiement/commande-paiement';
+import { CommandeGeolocPage } from '../pages/commande-geoloc/commande-geoloc';
 import { CommandeRetraitPage } from '../pages/commande-retrait/commande-retrait';
 import { CommandeValidationPage } from '../pages/commande-validation/commande-validation';
 import { PanierPage } from '../pages/panier/panier';
@@ -49,7 +49,7 @@ import { CommandeListeUserProvider } from '../providers/commande-liste-user/comm
     LoginPage,
     AProposPage,
     CommandeConfirmationPage,
-    CommandePaiementPage,
+    CommandeGeolocPage,
     CommandeRetraitPage,
     CommandeValidationPage,
     PanierPage,
@@ -76,7 +76,7 @@ import { CommandeListeUserProvider } from '../providers/commande-liste-user/comm
     LoginPage,
     AProposPage,
     CommandeConfirmationPage,
-    CommandePaiementPage,
+    CommandeGeolocPage,
     CommandeRetraitPage,
     CommandeValidationPage,
     PanierPage,

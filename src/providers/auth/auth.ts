@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
 import { Observable, ReplaySubject } from 'rxjs/Rx';
-import { delayWhen, map } from 'rxjs/operators';
+import { delayWhen, map, switchMap, first } from 'rxjs/operators';
 import { Storage } from '@ionic/storage';
 
 import { AuthRequest } from '../../models/auth-request';
@@ -65,6 +65,16 @@ export class AuthProvider {
     // TODO: remove the stored authentication response from storage when logging out.
     this.storage.remove('login');
     console.log('User logged out');
+  }
+
+  updateUser(updatedUser: UserResponse) : Observable<UserResponse> {
+    return this.authSource.pipe(first(), switchMap(auth => {
+      auth.user = updatedUser;
+      return this.saveAuth(auth).pipe(map(() => {
+        this.authSource.next(auth);
+        return updatedUser;
+      }))
+    }));
   }
 
   private saveAuth(auth: AuthResponse): Observable<void> {

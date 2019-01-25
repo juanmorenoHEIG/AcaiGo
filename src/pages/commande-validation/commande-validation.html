@@ -7,12 +7,38 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Commande_validation</ion-title>
+    <ion-title>Validation de votre commande</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-item>
+        <ion-col col-9>
+            <h4 style="display:inline-block;">Date de retrait:</h4>
+            <p style="display:inline-block;">{{orders?.pickup_date}}</p> 
+        </ion-col>
+    </ion-item>
+    <ion-item>
+        <ion-col col-9>
+            <h4 style="display:inline-block;">Position:</h4>
+            <p style="display:inline-block;">Logitude: {{orders?.pickup_place.location_lon}} Latitude: {{orders?.pickup_place.location_lat}}</p> 
+        </ion-col>
+    </ion-item>
+    <h2>Produits choisis</h2>
+    <ion-card *ngFor='let product of products'>
+        <ion-card-content>
+          <ion-card-title>
+            {{product?.name}}
+          </ion-card-title>
+          <p>
+            {{product?.price}} CHF
+          </p>
+        </ion-card-content>
+      </ion-card>
+      <ion-col>
+          <button (click)='submitOrder()' ion-button class="submit-btn" full>Commander</button>
+        </ion-col>
 
 </ion-content>

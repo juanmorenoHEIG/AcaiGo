@@ -6,6 +6,7 @@ import { OrderResponse } from "../../models/order";
 import {LoginPage} from "../login/login";
 import {UserServiceProvider} from "../../providers/user/user-service";
 import {OrderServiceProvider} from "../../providers/order/order-service";
+import {CommandeGeolocPage} from "../commande-geoloc/commande-geoloc";
 
 
 /**
@@ -23,27 +24,26 @@ export class CommandeRetraitPage {
 
   products: ProductResponse[];
 
-  orders: OrderResponse[];
+  orders: OrderResponse;
 
-  date: string;
-
+  day: any  = new Date().toISOString();
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private orderDate: OrderServiceProvider) {
 
+    this.orders = this.navParams.data.newOrder;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CommandeRetraitPage');
-    console.log(this.navParams);
-    console.log(this.products);
-    console.log(this.orders);
-
-    this.products = this.navParams.get('products');
+  
   }
 
   submitDate(){
     console.log("submit date");
 
+    this.orders.pickup_date = this.day;
+
+    console.log(this.orders);
+    this.navCtrl.push(CommandeGeolocPage, {orders: this.orders});
   }
 
 }

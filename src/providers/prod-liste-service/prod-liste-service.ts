@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {ProdListeResponse} from '../../models/prodliste';
 import { Observable } from 'rxjs/Rx';
+import {ProductResponse} from '../../models/product';
 
 
 /*
@@ -24,5 +25,11 @@ export class ProdListeServiceProvider {
   getProdListeFiltered(filter): Observable<ProdListeResponse> {
     return this.httpClient.get<ProdListeResponse>('https://comem-webserv-2018-2019-b.herokuapp.com/products/?name=' + filter);
   }
+
+  getProdById(id): Observable<ProductResponse> {
+    return this.httpClient.get<ProductResponse>('https://comem-webserv-2018-2019-b.herokuapp.com/products/' + id);
+  }
+
+
 
 }

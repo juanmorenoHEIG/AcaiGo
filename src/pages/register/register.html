@@ -52,7 +52,7 @@
                   </ion-item>
       
                 <ion-item>
-                  <ion-input type="text" placeholder="Ville" name="City" #CityInput='ngModel' [(ngModel)]='register.address.City'  required email></ion-input>
+                  <ion-input type="text" placeholder="Ville" name="City" #CityInput='ngModel' [(ngModel)]='register.address.City'  required ></ion-input>
                 </ion-item>
                 <!-- Error message displayed if the CityInput is invalid -->
                 <ion-item *ngIf='CityInput.invalid && CityInput.dirty' no-lines>
@@ -60,7 +60,7 @@
                   </ion-item>
       
                 <ion-item>
-                  <ion-input type="email" placeholder="Email" name="email" #emailInput='ngModel' [(ngModel)]='register.email'  required></ion-input>
+                  <ion-input type="email" placeholder="Email" name="email" #emailInput='ngModel' [(ngModel)]='register.email'  required email></ion-input>
                 </ion-item>
                 <!-- Error message displayed if the emailInput is invalid -->
                 <ion-item *ngIf='emailInput.invalid && emailInput.dirty' no-lines>

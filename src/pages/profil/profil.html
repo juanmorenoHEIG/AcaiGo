@@ -22,8 +22,8 @@
   <ion-grid>
     <ion-row class="avatar" justify-content-start>
         <ion-col col-4>
-            <ng-template ngIf="user?.image" ngIfElse="noPictureData">
-                <img src="{{user?.image}}" />
+            <ng-template [ngIf]="user?.image" [ngIfElse]="noPictureData">
+                <img id="profile-image" src="{{user?.image}}" />
             </ng-template>
             <ng-template #noPictureData>
                 <img id="profile-image" src="https://image.flaticon.com/icons/svg/3/3711.svg">
@@ -37,9 +37,22 @@
     </ion-row>
     <ion-row>
       <ion-item>
-          <ion-col col-12>
+          <ion-col col-9>
               <h4 style="display:inline-block;">Email:</h4>
-              <p style="display:inline-block;" id="profil-email">{{user?.email}}</p>  
+              <p style="display:inline-block;" id="profil-email">{{user?.email}}</p> 
+                <ng-container *ngIf="show">
+                    <form #newEmailForm='ngForm' (submit)='updateEmail(newEmailForm)'>
+                          <input ion-item type='email' placeholder='nouvel email' [(ngModel)]='emailNew'
+                            name='emailNew' required #emailNewInput='ngModel' email/>
+                            <p *ngIf='emailNewInput.invalid && emailNewInput.dirty'>
+                                L'email entré est invalide
+                              </p>
+                            <button ion-button class="submit-btn" full type="submit" [disabled]='newEmailForm.invalid'>OK</button>
+                      </form>
+                </ng-container>
+          </ion-col>
+          <ion-col col-3>
+              <button (click)='toggleForm()' id="modifyEmail"> Edit mail</button>
           </ion-col>
       </ion-item>     
     </ion-row>
@@ -51,26 +64,15 @@
           </ion-col>
       </ion-item>
     </ion-row>
-    <ion-row>
-      <ion-item>
-          <ion-col col-12>
-              <h4 style="display:inline-block;">Moyen de paiement:</h4>
-              <p style="display:inline-block;" id="profil-mdp"></p>  
-          </ion-col>
-      </ion-item>
-    </ion-row>
+    
+    <button ion-button class="submit-btn" full (click)='voirCommandes()'>Voir toutes les commandes</button>
+    <button (click)='toggleConfirmDelete()'  id="deleteUser" ion-item> Supprimer mon compte AcaiGo</button>
+    <ng-container *ngIf="deleteUser">
+        <button ion-button class="submit-btn" (click)="deleteUserAccount()">Oui, supprimer mon compte</button>
+    </ng-container>
   </ion-grid>
-  <ion-list>
-    <button class="commande" ion-item>
-      commande1
-    </button>
-    <button class="commande" ion-item>
-      commande2
-    </button>
-  </ion-list>
+    
+
   <ion-footer>
-    <ion-col>
-      <button ion-button class="submit-btn" full (click)='voirCommandes()'>Voir toutes les commandes</button>
-    </ion-col>
   </ion-footer>
 </ion-content>
