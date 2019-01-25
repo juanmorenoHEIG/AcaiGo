@@ -8,6 +8,8 @@ import {ProdListeServiceProvider} from '../../providers/prod-liste-service/prod-
 import { ProductResponse } from '../../models/product';
 import {PanierPage} from "../panier/panier";
 import { NgModel } from '@angular/forms';
+import {OrderLinesResponse} from "../../models/orderLines";
+import {OrderResponse} from "../../models/order";
 
 
 /**
@@ -29,9 +31,12 @@ export class ProduitsListePage {
 
 
   products: ProductResponse[];
+  orders: OrderResponse;
 
   addedProducts: ProductResponse[];
   nameFilter: string;
+  productQuantity: any;
+
 
   constructor(private auth: AuthProvider, public navCtrl: NavController, public navParams: NavParams, private prodListe: ProdListeServiceProvider) {
 
@@ -65,6 +70,14 @@ export class ProduitsListePage {
 
       //console.log(products);
     this.addedProducts.push(product);
+    let index = this.addedProducts.findIndex(x => x._id == product._id);
+    //console.log(index);
+    this.productQuantity = index;
+
+    console.log(this.productQuantity);
+    //console.log(product);
+
+// ...
 
     console.log(this.addedProducts);
 
@@ -82,7 +95,7 @@ export class ProduitsListePage {
   seeCart () {
 
     console.log("panier");
-    this.navCtrl.push(PanierPage, {products: this.addedProducts});
+    this.navCtrl.push(PanierPage, {products: this.addedProducts, orders: this.productQuantity});
   }
 
   filter(){
