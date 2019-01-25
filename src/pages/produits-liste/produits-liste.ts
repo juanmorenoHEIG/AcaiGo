@@ -8,7 +8,6 @@ import {ProdListeServiceProvider} from '../../providers/prod-liste-service/prod-
 import { ProductResponse } from '../../models/product';
 import {PanierPage} from "../panier/panier";
 import { NgModel } from '@angular/forms';
-import {OrderLinesResponse} from "../../models/orderLines";
 
 
 /**
@@ -33,8 +32,6 @@ export class ProduitsListePage {
 
   addedProducts: ProductResponse[];
   nameFilter: string;
-  product: number=1;
-
 
   constructor(private auth: AuthProvider, public navCtrl: NavController, public navParams: NavParams, private prodListe: ProdListeServiceProvider) {
 
@@ -66,16 +63,10 @@ export class ProduitsListePage {
 
   addProduct (product: ProductResponse) {
 
-    //console.log(this.quantityProduct);
+      //console.log(products);
     this.addedProducts.push(product);
-    let index = this.addedProducts.findIndex(x => x._id == product._id);
-    console.log(index);
 
-    //console.log(product);
-
-// ...
-
-    //console.log(this.addedProducts);
+    console.log(this.addedProducts);
 
   }
 
