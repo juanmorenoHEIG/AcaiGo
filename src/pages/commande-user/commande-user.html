@@ -15,5 +15,5 @@
 
 <ion-content padding>
   <!-- Somewhere in your template -->
-  <div class='map' leaflet [leafletOptions]='mapOptions' (leafletMapReady)='onMapReady($event)'></div>
+  <div class='map' leaflet [leafletOptions]='mapOptions' (leafletMapReady)='onMapReady($event)' [leafletLayers]='mapMarkers'></div>
 </ion-content>
