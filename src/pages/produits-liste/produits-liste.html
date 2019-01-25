@@ -22,6 +22,19 @@
 </ion-header>
 
 <ion-content padding>
+          <!-- Price input -->
+          <ion-item>
+              <ion-label floating>Name</ion-label>
+              <ion-input id="namefilter" type='text' name='name' [(ngModel)]='nameFilter'></ion-input>
+            </ion-item>
+            <div padding>
+              <ion-buttons end>
+                <button ion-button block (click)='filter()'  icon-right>
+                  <ion-icon name='filter'></ion-icon>
+                  Filtrer
+                </button>
+              </ion-buttons>
+            </div>
   <ion-card *ngFor='let product of products; let index = index'>
     <div text-center>
       <img class="bowl" src="../../assets/imgs/acai_bowl.png"/>
