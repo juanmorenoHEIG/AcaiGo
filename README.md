@@ -66,47 +66,47 @@ npm install
 
 ### Step 1: Login or create new account
 
-<img src="screenshots/login.jpg" width="30%" height="30%">
+<img src="screenshots/login.jpg" width="25%" height="25%">
 
 
-<img src="screenshots/register.jpg" width="50%" height="50%">
+<img src="screenshots/register.jpg" width="25%" height="25%">
 
 ----
 
 ### Step 2: Pick a bowl or see the details of the product
 
-<img src="screenshots/products.jpg" width="50%" height="50%">
+<img src="screenshots/products.jpg" width="25%" height="25%">
 
 
-<img src="screenshots/details.jpg" width="50%" height="50%">
+<img src="screenshots/details.jpg" width="25%" height="25%">
 
 
 ----
 
 ### Step 3: Click on add and you can see your shopping cart
 
-<img src="screenshots/panier.jpg" width="30%" height="30%">
+<img src="screenshots/panier.jpg" width="25%" height="25%">
 
 
 ----
 
 ### Step 4: Click on continue, you now have to pick the date when you want to pick up the bowl from the store
 
-<img src="screenshots/date.jpg" width="50%" height="50%">
+<img src="screenshots/date.jpg" width="25%" height="25%">
 
 
 ----
 
 ### Step 5: Click on continue, your order is now geolocated
 
-<img src="screenshots/geoloc.jpg" width="50%" height="50%">
+<img src="screenshots/geoloc.jpg" width="25%" height="25%">
 
 
 ----
 
 ### Step 6: Validate your order
 
-<img src="screenshots/validation.jpg" width="50%" height="50%">
+<img src="screenshots/validation.jpg" width="25%" height="25%">
 
 
 ----
@@ -115,7 +115,7 @@ npm install
 
 You can edit your e-mail address or delete your account. But also take your profile picture!
 
-<img src="screenshots/user.jpg" width="50%" height="50%">
+<img src="screenshots/user.jpg" width="25%" height="25%">
 
 
 ----
@@ -123,5 +123,5 @@ You can edit your e-mail address or delete your account. But also take your prof
 
 ### Click on see all orders to see the geolocation of all your orders
 
-<img src="screenshots/ordersgeo.jpg" width="50%" height="50%">
+<img src="screenshots/ordersgeo.jpg" width="25%" height="25%">
 
