@@ -63,3 +63,11 @@ npm install
   Follow the instructions on the App.
   
 ## Demo
+
+### Step 1: Login or create new account
+
+![alt text](screenshots/login.jpg)
+
+![alt text](screenshots/register.jpg)
+
+
