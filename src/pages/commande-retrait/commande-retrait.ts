@@ -24,7 +24,7 @@ export class CommandeRetraitPage {
 
   products: ProductResponse[];
 
-  orders: OrderResponse[];
+  orders: OrderResponse;
 
   day: any  = new Date().toISOString();
 
@@ -48,6 +48,7 @@ export class CommandeRetraitPage {
   submitDate(){
     console.log("submit date");
 
+    this.orders.pickup_date = this.day;
 
     console.log(this.day);
     //this.orders.push(this.day);
@@ -56,7 +57,7 @@ export class CommandeRetraitPage {
     console.log(this.orders);
 
     //this.orders.push(addDate);
-    //this.navCtrl.push(CommandePaiementPage, {day: this.day});
+    this.navCtrl.push(CommandePaiementPage, {orders: this.orders});
   }
 
 }
