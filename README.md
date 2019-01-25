@@ -45,15 +45,13 @@ Project is created with:
 
 ### For IOS users
 
-## Ionic DevApp
+#### Ionic DevApp
 
-  ```
   Download [Ionic DevApp](https://itunes.apple.com/us/app/ionic-devapp/id1233447133?mt=8) on the App Store
   Create an account and login in
   Follow the instruction on the App
-  ```
   
-### For Android users
+#### For Android users
 
 
 ## Setup
