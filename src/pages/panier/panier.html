@@ -16,21 +16,24 @@
     <!-- if the cart has no elements -->
     <!-- if the cart has some products -->
       <ion-list>
-          <ion-row *ngFor='let orderline of orderFull.orderLines'>
+          <ion-card *ngFor='let orderline of orderFull.orderLines'>
+            <ion-card-content>
             <ion-col class="image" col-6>
               <ion-thumbnail class="thumbnail" item-left>
                 <img class="img" src="../../assets/imgs/acai_bowl.png">
               </ion-thumbnail>
             </ion-col>
+            <ion-card-title>
+                {{orderline?.product.name}}
+              </ion-card-title>
             <ion-col col-6>
-              <h2>{{ orderline?.product.name }}</h2>
               <h5>Prix: CHF {{ orderline?.product.price }}</h5>
               Quantité:
-              <ion-icon name="remove-circle" (click)="decrement()"></ion-icon>  {{orderline?.quantity}}
-              <ion-icon name="add-circle" (click)="increment()"></ion-icon>
+             {{orderline?.quantity}}
             </ion-col>
-          </ion-row>
-        <ion-row>
+          </ion-card-content>
+          </ion-card>
+        <ion-row class="total">
           <h3>Total:</h3>
         </ion-row>
       </ion-list>
