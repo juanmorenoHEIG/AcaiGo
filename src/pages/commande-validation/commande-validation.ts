@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ProductResponse } from '../../models/product';
 import {ProdListeServiceProvider} from '../../providers/prod-liste-service/prod-liste-service';
 import { OrderResponse } from "../../models/order";
+import { OrderServiceProvider} from '../../providers/order/order-service';
 
 
 
@@ -24,7 +25,7 @@ export class CommandeValidationPage {
   orders: OrderResponse;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private prod: ProdListeServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private prod: ProdListeServiceProvider, private orderPost: OrderServiceProvider) {
     this.orders = this.navParams.data.orders;
     this.products = [];
   }
@@ -48,6 +49,12 @@ this.orders.state = "En cours";
   submitOrder()
   {
     console.log("Commander!")
+   /*  this.orderPost.pushOrder(this.orders).subscribe(order => {
+     
+      console.log(order);
+    }, err => {
+      console.warn('Could not create new order', err);
+    }); */
   }
 
 }

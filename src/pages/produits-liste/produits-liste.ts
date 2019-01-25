@@ -68,7 +68,7 @@ export class ProduitsListePage {
 
   addProduct (product: ProductResponse) {
 
-    //console.log(this.quantityProduct);
+      //console.log(products);
     this.addedProducts.push(product);
     let index = this.addedProducts.findIndex(x => x._id == product._id);
     //console.log(index);
@@ -79,7 +79,7 @@ export class ProduitsListePage {
 
 // ...
 
-    //console.log(this.addedProducts);
+    console.log(this.addedProducts);
 
   }
 
