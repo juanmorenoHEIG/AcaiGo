@@ -1,9 +1,10 @@
 export class OrderLinesResponse {
-  _id: Number;
+  _id: String;
   productId: String;
-  quantity: Number;
+  quantity: number;
 
-  constructor(productId){
+  constructor(productId, quantity){
     this.productId = productId;
+    this.quantity = quantity;
   }
 }

@@ -18,7 +18,7 @@ export class CommandeConfirmationPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CommandeConfirmationPage');
+    console.log('Done!! ');
   }
 
 }
