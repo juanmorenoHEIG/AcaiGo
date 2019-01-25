@@ -1,0 +1,27 @@
+<!--
+  Generated template for the CommandePaiementPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Géolocalisation</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="text-align:center;">
+<p class="positionMessage"> Nous récupérons votre position pour gélocaliser votre commande.</p>
+<img id="location" src="https://image.flaticon.com/icons/svg/1148/1148202.svg">
+<ion-row>
+    <ion-footer>
+      <ion-col>
+        <button (click)='submitPosition()' ion-button class="submit-btn" full>CONTINUER</button>
+      </ion-col>
+    </ion-footer>
+  </ion-row>
+
+</ion-content>

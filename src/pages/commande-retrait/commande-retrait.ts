@@ -6,7 +6,7 @@ import { OrderResponse } from "../../models/order";
 import {LoginPage} from "../login/login";
 import {UserServiceProvider} from "../../providers/user/user-service";
 import {OrderServiceProvider} from "../../providers/order/order-service";
-import {CommandePaiementPage} from "../commande-paiement/commande-paiement";
+import {CommandeGeolocPage} from "../commande-geoloc/commande-geoloc";
 
 
 /**
@@ -34,15 +34,7 @@ export class CommandeRetraitPage {
   }
 
   ionViewDidLoad() {
-    console.log("test");
-    console.log('ionViewDidLoad CommandeRetraitPage');
-    console.log("commande retrait");
-    console.log(this.navParams.data);
-    console.log("orders");
-    console.log(this.orders);
-
-    this.products = this.navParams.get('products');
-    console.log("test" + this.day);
+  
   }
 
   submitDate(){
@@ -50,14 +42,8 @@ export class CommandeRetraitPage {
 
     this.orders.pickup_date = this.day;
 
-    console.log(this.day);
-    //this.orders.push(this.day);
-    //this.navParams.data.push(this.day);
-    //this.orders[0].pickup_date;
     console.log(this.orders);
-
-    //this.orders.push(addDate);
-    this.navCtrl.push(CommandePaiementPage, {orders: this.orders});
+    this.navCtrl.push(CommandeGeolocPage, {orders: this.orders});
   }
 
 }
