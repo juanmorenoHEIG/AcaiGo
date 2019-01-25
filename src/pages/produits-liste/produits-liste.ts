@@ -71,15 +71,15 @@ export class ProduitsListePage {
       //console.log(products);
     this.addedProducts.push(product);
     let index = this.addedProducts.findIndex(x => x._id == product._id);
-    //console.log(index);
-    this.productQuantity = index;
+    console.log(index);
+/*    this.productQuantity = index;
 
-    console.log(this.productQuantity);
+    console.log(this.productQuantity);*/
     //console.log(product);
 
 // ...
 
-    console.log(this.addedProducts);
+    //console.log(this.addedProducts);
 
   }
 
