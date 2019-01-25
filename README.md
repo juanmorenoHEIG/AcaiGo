@@ -66,7 +66,7 @@ npm install
 
 ### Step 1: Login or create new account
 
-<img src="screenshots/login.jpg" width="50%" height="50%">
+<img src="screenshots/login.jpg" width="30%" height="30%">
 
 
 <img src="screenshots/register.jpg" width="50%" height="50%">
@@ -85,7 +85,7 @@ npm install
 
 ### Step 3: Click on add and you can see your shopping cart
 
-<img src="screenshots/panier.jpg" width="50%" height="50%">
+<img src="screenshots/panier.jpg" width="30%" height="30%">
 
 
 ----
