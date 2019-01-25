@@ -4,6 +4,6 @@ export class OrderLinesResponse {
   quantity: Number;
 
   constructor(productId){
-    this.productId = productId
+    this.productId = productId;
   }
 }
