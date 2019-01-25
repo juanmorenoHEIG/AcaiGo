@@ -2,13 +2,14 @@
 
 ---
 
-The creation of this application was done as part of the "AppMob" course at [HEIG-VD](https://heig-vd.ch/).
+The creation of this application was done as part of the "AppMob" course at [HEIG-VD](https://heig-vd.ch/). The goal of this course was to learn how to develop a hybrid mobile application,
+and upload it on the App Store and Google Store.
 
 ## Table of contents
 * [The application](#the-application)
 * [Technologies](#technologies)
 * [Setup](#setup)
-* [Launch](#Launch)
+* [How to launch the application](#How-to-Launch-the-application)
 * [Demo](#Demo)
 
 ## The application
@@ -50,7 +51,7 @@ cd acaiGo_App
 npm install
 ```
 
-## Launch the application
+## How to launch the application
 
 ### For IOS users
 
@@ -62,6 +63,6 @@ npm install
   
   Follow the instructions on the App.
   
-#### For Android users
+### For Android users
 
 ## Demo
