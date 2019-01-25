@@ -121,7 +121,7 @@ You can edit your e-mail address or delete your account. But also take your prof
 ----
 
 
-### Click on see all orders to see the geolocation of all your orders
+Click on see all orders to see the geolocation of all your orders
 
 <img src="screenshots/ordersgeo.jpg" width="25%" height="25%">
 
