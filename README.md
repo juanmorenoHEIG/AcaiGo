@@ -20,9 +20,9 @@ You can see all the ingredients of each bowls before choosing it. All your order
 
 * Login
 * Registration
-* Product search
+* Search a product
 * See product details
-* Create a order of products
+* Create an order of products
 * Edit the quantity of the product
 * See the user profil
 * Edit the user email
@@ -37,7 +37,7 @@ Project is created with:
 * [Node: version 8](https://angularjs.org/)
 * [Angular: version 5.2.11](https://angularjs.org/)
 * [Ionic: version 3](https://ionicframework.com/getting-started/)
-* [Cordova: version](https://cordova.apache.org/) 
+* [Cordova](https://cordova.apache.org/) 
 * [leaflet: version 1.4.0](https://leafletjs.com/)
 * [HTML 5](https://www.w3.org/TR/html52/)
 * [CSS](https://www.w3.org/Style/CSS/)
