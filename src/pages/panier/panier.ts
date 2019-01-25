@@ -23,10 +23,12 @@ export class PanierPage {
 
   newOrder : OrderResponse;
 
+  currentNumber: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
     //this.products = navParams.get('item')
+    this.currentNumber=1;
 
     console.log(this.navParams);
   }
@@ -36,7 +38,44 @@ export class PanierPage {
     console.log("test");
     console.log(this.navParams.data);
     this.products = this.navParams.get('products');
+    console.log("currentnumber" + this.currentNumber);
 
+  }
+
+  private increment () {
+    console.log("increment");
+
+    console.log(this.products);
+/*    this.newOrder = new OrderResponse();
+    //var ordernew = this.newOrder;
+    //console.log(this.products);
+
+    //console.log()
+    this.products.forEach((product, index) => {
+      //console.log("lala"+ordernew.orderLines);
+      this.currentNumber++;
+      //console.log(index);
+      //console.log(product);
+      this.newOrder.orderLines.push(new OrderLinesResponse(product._id));
+      //ordernew.orderLines[index].productId=product._id;
+    });
+
+    this.newOrder.orderLines.forEach((quantity, index) => {
+      console.log(index);
+      this.currentNumber++;
+    });
+
+    //console.log(this.newOrder);
+
+
+    //console.log(this.newOrder.orderLines);*/
+
+
+  }
+
+  private decrement () {
+    console.log("increment");
+    this.currentNumber--;
   }
 
   order(){
