@@ -9,7 +9,7 @@
 * [Technologies](#technologies)
 * [Launch](#Launch)
 * [Setup](#setup)
-* [Demo] (#Demo)
+* [Demo](#Demo)
 
 ## General info
 This project is simple Lorem ipsum dolor generator.
@@ -26,7 +26,10 @@ Project is created with:
 
 <h3> For developpers </h3>
 
+<div class="highlight highlight-source-shell">
 Clone the source locally:
+</div>
+
 
 ## Setup
 
