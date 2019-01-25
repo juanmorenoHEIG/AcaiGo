@@ -32,20 +32,30 @@ The AçaiGo App gives you the quickest, easiest way to place an order for acai b
 ## Technologies
 Project is created with:
 
+* [Node: version 8](https://angularjs.org/)
 * [Angular: version 5.2.11](https://angularjs.org/)
 * [Ionic: version 3](https://ionicframework.com/getting-started/)
 * [Cordova: version](https://cordova.apache.org/) 
 * [leaflet: version 1.4.0](https://leafletjs.com/)
 * [HTML 5](https://www.w3.org/TR/html52/)
+* [CSS](https://www.w3.org/Style/CSS/)
 
-## Launch
 
-### For developpers
+## Launch the application
+
+### For IOS users
+
+## Ionic DevApp
 
   ```
-  Clone the source locally:
+  Download [Ionic DevApp](https://itunes.apple.com/us/app/ionic-devapp/id1233447133?mt=8) on the App Store
+  Create an account and login in
+  Follow the instruction on the App
   ```
   
+### For Android users
+
+
 ## Setup
 
 ## Demo
