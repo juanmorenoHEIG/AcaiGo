@@ -5,6 +5,8 @@ import { ProductResponse } from '../../models/product';
 import { OrderResponse } from "../../models/order";
 import {CommandeRetraitPage} from "../commande-retrait/commande-retrait";
 import {OrderLinesResponse} from "../../models/orderLines";
+import {OrderLinesFullResponse} from "../../models/orderLineFull";
+import { OrderFullResponse } from '../../models/orderFull';
 
 /**
  * Generated class for the PanierPage page.
@@ -20,82 +22,47 @@ import {OrderLinesResponse} from "../../models/orderLines";
 export class PanierPage {
 
   products: ProductResponse[];
+  orderFull: OrderFullResponse;
+  orders: OrderResponse;
 
-  newOrder : OrderResponse;
 
-  currentNumber: any;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-
-    //this.products = navParams.get('item')
-    this.currentNumber=1;
-
-    console.log(this.navParams);
+  constructor(public navCtrl: NavController, public navParams: NavParams, private prod: ProdListeServiceProvider) {
+    this.orders = this.navParams.data.orders;
+    this.products = [];
+    this.orderFull = new OrderFullResponse();
+    this.orderFull.orderLines = [];
   }
 
   ionViewDidLoad() {
-    //this.orders = this.navParams.get('orders');
-    console.log("test");
-    console.log(this.navParams.data);
+    console.log("hola");
+    this.orders.orderLines.forEach((orderline, index) => {
+      this.prod.getProdById(orderline.productId).subscribe(data => {
+        
+      this.orderFull.orderLines.push(new OrderLinesFullResponse(data, orderline.quantity));
+          console.log(this.orderFull);
 
-    this.products = this.navParams.get('products');
-    console.log("currentnumber" + this.currentNumber);
+        }, err => {
+          console.warn('Could not get the product', err);
+        });
+      });
 
   }
 
-  private increment () {
+  /* private increment () {
     console.log("increment");
 
-    console.log(this.products);
-/*    this.newOrder = new OrderResponse();
-    //var ordernew = this.newOrder;
-    //console.log(this.products);
-
-    //console.log()
-    this.products.forEach((product, index) => {
-      //console.log("lala"+ordernew.orderLines);
-      this.currentNumber++;
-      //console.log(index);
-      //console.log(product);
-      this.newOrder.orderLines.push(new OrderLinesResponse(product._id));
-      //ordernew.orderLines[index].productId=product._id;
-    });
-
-    this.newOrder.orderLines.forEach((quantity, index) => {
-      console.log(index);
-      this.currentNumber++;
-    });
-
-    //console.log(this.newOrder);
-
-
-    //console.log(this.newOrder.orderLines);*/
-
+    
 
   }
 
   private decrement () {
-    console.log("increment");
-    this.currentNumber--;
-  }
+    console.log("decrement");
+  } */
 
   order(){
-    console.log("Nouvelle commande :",this.products);
-    this.newOrder = new OrderResponse();
-    //var ordernew = this.newOrder;
+   console.log("hola");
 
-    //console.log()
-    this.products.forEach((product, index) => {
-      //console.log("lala"+ordernew.orderLines);
-      console.log(index);
-      this.newOrder.orderLines.push(new OrderLinesResponse(product._id));
-      //ordernew.orderLines[index].productId=product._id;
-      //console.log(ordernew);
-    });
-    //this.newOrder.orderLines[0].productId
-     console.log(this.newOrder);
-    //this.navCtrl.push(CommandeRetraitPage, {products: this.products});
 
-    this.navCtrl.push(CommandeRetraitPage, {newOrder: this.newOrder});
+    this.navCtrl.push(CommandeRetraitPage, {newOrder: this.orders});
   }
 }

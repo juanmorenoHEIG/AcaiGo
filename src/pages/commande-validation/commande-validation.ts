@@ -4,6 +4,10 @@ import { ProductResponse } from '../../models/product';
 import {ProdListeServiceProvider} from '../../providers/prod-liste-service/prod-liste-service';
 import { OrderResponse } from "../../models/order";
 import { OrderServiceProvider} from '../../providers/order/order-service';
+import {OrderLinesFullResponse} from "../../models/orderLineFull";
+import { OrderFullResponse } from '../../models/orderFull';
+import {CommandeConfirmationPage} from "../commande-confirmation/commande-confirmation";
+
 
 
 
@@ -21,13 +25,15 @@ import { OrderServiceProvider} from '../../providers/order/order-service';
 })
 export class CommandeValidationPage {
 
-  products: ProductResponse[];
   orders: OrderResponse;
+  orderFull: OrderFullResponse;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private prod: ProdListeServiceProvider, private orderPost: OrderServiceProvider) {
     this.orders = this.navParams.data.orders;
-    this.products = [];
+    
+    this.orderFull = new OrderFullResponse();
+    this.orderFull.orderLines = [];
   }
 
   ionViewDidLoad() {
@@ -37,10 +43,12 @@ this.orders.state = "En cours";
     console.log(this.orders);
     this.orders.orderLines.forEach((orderline, index) => {
       this.prod.getProdById(orderline.productId).subscribe(data => { 
-      this.products.push(data);
+      this.orderFull.orderLines.push(new OrderLinesFullResponse(data, orderline.quantity));
+      console.log(this.orderFull);
+
 
         }, err => {
-          console.warn('Could not get new prodliste', err);
+          console.warn('Could not get the product', err);
         });
     });
 
@@ -48,13 +56,13 @@ this.orders.state = "En cours";
 
   submitOrder()
   {
-    console.log("Commander!")
-   /*  this.orderPost.pushOrder(this.orders).subscribe(order => {
-     
-      console.log(order);
+    
+   this.orderPost.pushOrder(this.orders).subscribe(order => {
+      console.log("Commande dans DB!");
+      this.navCtrl.push(CommandeConfirmationPage);
     }, err => {
       console.warn('Could not create new order', err);
-    }); */
+    });
   }
 
 }

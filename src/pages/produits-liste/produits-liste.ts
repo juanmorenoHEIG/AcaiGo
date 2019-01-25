@@ -41,6 +41,9 @@ export class ProduitsListePage {
   constructor(private auth: AuthProvider, public navCtrl: NavController, public navParams: NavParams, private prodListe: ProdListeServiceProvider) {
 
     this.addedProducts = [];
+    this.orders = new OrderResponse();
+    this.orders.orderLines = [];
+
   }
 
   ionViewDidLoad() {
@@ -68,34 +71,31 @@ export class ProduitsListePage {
 
   addProduct (product: ProductResponse) {
 
-      //console.log(products);
-    this.addedProducts.push(product);
-    let index = this.addedProducts.findIndex(x => x._id == product._id);
-    //console.log(index);
-    this.productQuantity = index;
+    let alreadyInCart = false;
+    if(this.orders.orderLines.length > 0)
+    {
+      this.orders.orderLines.forEach((orderline, index) =>{
 
-    console.log(this.productQuantity);
-    //console.log(product);
+        if(orderline.productId == product._id)
+      {
+        alreadyInCart = true;
+        orderline.quantity++;
+      }
+    
+      });
+    }
 
-// ...
-
-    console.log(this.addedProducts);
+    if(alreadyInCart==false)
+    { 
+      this.orders.orderLines.push(new OrderLinesResponse (product._id, 1));
+    }
 
   }
 
 
-/*  this.products.forEach(function(product){
-    //console.log(products);
-    allAddedProducts.push(products);
-  })
-  console.log(allAddedProducts);
-
-  //this.navCtrl.push(PanierPage, {product: product});*/
-
   seeCart () {
 
-    console.log("panier");
-    this.navCtrl.push(PanierPage, {products: this.addedProducts, orders: this.productQuantity});
+    this.navCtrl.push(PanierPage, {orders: this.orders});
   }
 
   filter(){

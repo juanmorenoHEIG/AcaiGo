@@ -14,6 +14,12 @@
 
 
 <ion-content padding>
+    <ul class="progressbar">
+        <li>Retrait</li>
+        <li>Géoloc</li>
+        <li class="active">Validation</li>
+        <li>C'est fait!</li>
+      </ul>
     <ion-item>
         <ion-col col-9>
             <h4 style="display:inline-block;">Date de retrait:</h4>
@@ -27,14 +33,17 @@
         </ion-col>
     </ion-item>
     <h2>Produits choisis</h2>
-    <ion-card *ngFor='let product of products'>
+    <ion-card *ngFor='let orderline of orderFull.orderLines'>
         <ion-card-content>
           <ion-card-title>
-            {{product?.name}}
+            {{orderline?.product.name}}
           </ion-card-title>
           <p>
-            {{product?.price}} CHF
+            {{orderline?.product.price}} CHF
           </p>
+          <p>
+              Quantité: {{orderline?.quantity}}
+            </p>
         </ion-card-content>
       </ion-card>
       <ion-col>
